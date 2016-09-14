@@ -1,0 +1,23 @@
+.how_it_works {
+  background: url(../i/bg_how_it_works.jpg) no-repeat 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+          
+  &_caption {
+    background-color: #29333d;
+    text-align: center;
+  }
+
+  &_steps {
+    @extend %clearfix;
+
+  }
+
+  &_step {
+    position: relative;
+
+  }
+
+}

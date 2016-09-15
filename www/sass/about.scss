@@ -22,6 +22,7 @@
 
     &.caption_bg {
       background-color: #29333d;
+      position: relative;
     }
   }
 }
@@ -321,19 +322,49 @@
 
 .contact_block {
   @extend %clearfix;
+  padding-top: 20px;
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 40px;
+  }
 }
 
 .contact_info {
+  margin-bottom: 25px;
+  text-align: center;
 
   @include respond-to-min($resp_step_2) {
     float: left;
-    width: 310px;
+    width: 30%;
+    text-align: left;
   }
 
 }
 
 .contact_block_logo {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  z-index: 17;
+  margin-bottom: 20px;
 
+  span,
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  span {
+    font-size: 15px;
+    color: #a7a7a7;
+    padding-left: 12px;
+    letter-spacing: -.3px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-bottom: 50px;
+  }  
 }
 
 .contacts_section {
@@ -354,5 +385,111 @@
     content: '';
     background: rgba(0, 0, 0, .75);
   }
+}
 
+.contact_share_block {
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 10px;
+  }
+
+  .sh_link {
+    width: 70px;
+    height: 70px;
+
+    &:before {
+      font-size: 50px;
+      line-height: 70px;
+    }
+  }
+
+  @include respond-to-max($resp_step_2) {
+
+  }
+}
+
+.contact_block_questions {
+  text-align: center;
+  margin-top: 20px;
+
+  p {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-top: 35px;
+  }
+}
+
+.contact_block_caption {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #27ae60;
+}
+
+.contact_block_btn {
+  display: block;
+  height: 65px;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.contact_maps {
+  margin-left: -20px;
+
+  li {
+    margin-bottom: 25px;
+    padding-left: 20px;
+
+    @include respond-to-min($resp_step_4) {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: right;
+    width: 70%;
+  }
+}
+
+.contact_map_unit {
+  height: 380px;
+  border: 1px solid #aaa;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+
+  p {
+    line-height: 20px;
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+}
+
+.contact_block_addr {
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.contact_map {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  
+  iframe {
+    width: 100% !important;
+  }
 }

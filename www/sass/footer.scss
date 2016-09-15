@@ -7,6 +7,10 @@
   .section_inner {
     padding: 0 25px;
   }
+
+  .club & {
+    min-height: 300px;
+  }
 }
 
 .popup {
@@ -19,3 +23,35 @@
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, .75);
+  display: none;
+
+  .open_menu & {
+    display: block;
+  }
+}
+
+// **********  text
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.text_upper {
+  text-transform: uppercase;
+}

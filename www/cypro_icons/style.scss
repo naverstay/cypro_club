@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'cypro_icons';
-  src:  url('#{$icomoon-font-path}/cypro_icons.eot?9zror2');
-  src:  url('#{$icomoon-font-path}/cypro_icons.eot?9zror2#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/cypro_icons.ttf?9zror2') format('truetype'),
-    url('#{$icomoon-font-path}/cypro_icons.woff?9zror2') format('woff'),
-    url('#{$icomoon-font-path}/cypro_icons.svg?9zror2#cypro_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/cypro_icons.eot?kuqdgc');
+  src:  url('#{$icomoon-font-path}/cypro_icons.eot?kuqdgc#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/cypro_icons.ttf?kuqdgc') format('truetype'),
+    url('#{$icomoon-font-path}/cypro_icons.woff?kuqdgc') format('woff'),
+    url('#{$icomoon-font-path}/cypro_icons.svg?kuqdgc#cypro_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,6 +34,51 @@
 .i-phone {
   &:before {
     content: $i-phone;
+  }
+}
+.i-facebook {
+  &:before {
+    content: $i-facebook;
+  }
+}
+.i-instagram {
+  &:before {
+    content: $i-instagram;
+  }
+}
+.i-right_arrow {
+  &:before {
+    content: $i-right_arrow;
+  }
+}
+.i-arrow_left {
+  &:before {
+    content: $i-arrow_left;
+  }
+}
+.i-info {
+  &:before {
+    content: $i-info;
+  }
+}
+.i-menu {
+  &:before {
+    content: $i-menu;
+  }
+}
+.i-help {
+  &:before {
+    content: $i-help;
+  }
+}
+.i-check {
+  &:before {
+    content: $i-check;
+  }
+}
+.i-mobile {
+  &:before {
+    content: $i-mobile;
   }
 }
 

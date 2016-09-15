@@ -4,25 +4,121 @@ include mixins.pug
 doctype html
 html(lang='ru')
     +dev_head('Отдых на Кипре')
-    body
+    body.club
         .wrapper
             +header()
 
             .base
                 div.main_content
-                    .how_it_works
-                        h2.how_it_works_caption
+                    .how_it_works.section
+                        h2.how_it_works_caption.section_caption.caption_bg
                             span.section_inner КАК МЫ РАБОТАЕМ
                         
                         .section_inner
                             ul.how_it_works_steps
                                 li.how_it_works_step
-                                    p 
+                                    span.how_it_works_icon
+                                        img(src='i/step_1.png')
+                                    p Вы оставляете заявку или звоните
                             
-                        
-                    
-                .footer
+                                li.how_it_works_step
+                                    span.how_it_works_icon
+                                        img(src='i/step_2.png')
+                                    p Мы вместе выбираем лучший вариант
+                            
+                                li.how_it_works_step
+                                    span.how_it_works_icon
+                                        img(src='i/step_3.png')
+                                    p Заключаем с вами договор
+                            
+                                li.how_it_works_step
+                                    span.how_it_works_icon
+                                        img(src='i/step_4.png')
+                                    p Мы помогаем вам выбрать билет и оформить визу
+                            
+                                li.how_it_works_step
+                                    span.how_it_works_icon
+                                        img(src='i/step_5.png')
+                                    p В назначенное время встречаем вас в аэропорту Ларнака
+                            
+                                li.how_it_works_step
+                                    span.how_it_works_icon
+                                        img(src='i/step_6.png')
+                                    p Мы отправляемся на место проживания
+                            
+                                li.how_it_works_step
+                                    span.how_it_works_icon
+                                        img(src='i/step_7.png')
+                                    p Вы комфортно отдыхаете
+                            
+                            .text_center
+                                a.send_order.green_btn_2(href='#')
+                                    span.send_order_icon
+                                        img(src='i/order_icon.png')
+                                    p ОСТАВЬТЕ ЗАЯВКУ
+                                    div на бесплатную консультацию по выбору отдыха
+                                        
+                    .partners_section.section
+                        h2.partners_caption.section_caption.caption_bg
+                            span.section_inner Наши партнеры
+                            
+                        .section_inner
+                            ul.partners_list
+                                li
+                                    .partner_unit
+                                        img(src='i/partner_1.jpg')
+                                li
+                                    .partner_unit
+                                        img(src='i/partner_2.png')
+                                li
+                                    .partner_unit
+                                        img(src='i/partner_3.png')
+                                li
+                                    .partner_unit
+                                        img(src='i/partner_4.jpg')
+                                li
+                                    .partner_unit
+                                        img(src='i/partner_5.jpg')
+                                        
+                    .review_section.section
+                        .section_inner
+                            .section_caption КЛИЕНТЫ О НАС
+                            .reviewHolder.slider_holder.review_slider
+                                .reviewSlider
+                                    +loop_while(5)
+                                        .slide.review_unit
+                                            .review_author_avatar
+                                                img(src='i/author_1.jpg')
+                                                
+                                            p Спасибо большое за прекрасный отдых. Удобное расположение и отличный вид. Квартира полностью удовлетворила наши ожидания, все было чисто и аккуратно. Для ребенка нам предоставили даже детский стульчик.
+                                            
+                                            .review_author_name Лилия Шеина
+                                            
+                                .review_controls
+                                    .slider_arrow.slider_prev.i-arrow_left
+                                    .slider_arrow.slider_next.i-right_arrow
+                                        
+                    .contacts_section.section
+                        h2.section_caption.caption_bg
+                            span.section_inner КОНТАКТЫ
+                            
+                        .section_inner
+                            .contact_block
+                                .contact_info
+                                    a.contact_block_logo(href='index.html')
+                                        img(src='i/logo.png')
+                                        span Традиции и  <br>  надежность
+                                
+                                    
+                                            
+                                            
+                                
+                                        
+                //-.footer
                     .section_inner.clearfix
                         
+                        
+        .overlay
+
         +popup()
     +scripts()

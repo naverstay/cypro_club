@@ -28,6 +28,12 @@ body {
 .wrapper {
   position: relative;
   //min-height: 100%;
+
+  .club & {
+    min-height: 100%;
+    //padding-top: 130px;
+  }
+
 }
 
 .is_overlay {

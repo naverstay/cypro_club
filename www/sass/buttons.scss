@@ -48,4 +48,12 @@
   box-shadow: 0 3px 5px #7f7f7f;
 }
 
+.green_btn_2 {
+  @include transition_all(background-color .3s);
+  background-color: #27ae60;
+  color: #fff;
 
+  &:hover {
+    background-color: #229051;
+  }
+}

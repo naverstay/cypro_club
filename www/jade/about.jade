@@ -98,64 +98,7 @@ html(lang='ru')
                                     .slider_arrow.slider_prev.i-arrow_left
                                     .slider_arrow.slider_next.i-arrow_right
                                         
-                    .contacts_section.section
-                        h2.section_caption.caption_bg
-                            span.section_inner КОНТАКТЫ
-                            
-                        .section_inner
-                            .contact_block
-                                .contact_info
-                                    a.contact_block_logo(href='index.html')
-                                        img(src='i/logo.png')
-                                        span Традиции и  <br>  надежность
-                                    
-                                    ul.contact_share_block
-                                        li: a.sh_link.i-facebook(href='#')
-                                        li: a.sh_link.i-instagram(href='#')
-                                            
-                                    .contact_block_questions
-                                        .contact_block_caption ОСТАЛИСЬ ВОПРОСЫ?
-                                        p Задайте их нашему менеджеру!
-                                        
-                                        a.contact_block_btn.green_btn_2(href='#') Задать вопрос
-                                        
-                                ul.contact_maps
-                                    li
-                                        .contact_map_unit
-                                            .contact_map
-                                                | <iframe class="actAsDiv" width="350" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=ru&amp;q=%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%2C%20%D1%83%D0%BB.%D1%81%D1%83%D0%BC%D1%81%D0%BA%D0%B0%D1%8F%2C%2039&amp;aq=0&amp;ie=UTF8&amp;t=m&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe>
-                                            .contact_block_addr Харьков, Украина
-                                            p ул.Сумская, 39, офис 211
-                                        
-                                            p 
-                                                span.i-mobile
-                                                | &nbsp;
-                                                span +38 (097) 17 11 844
-                                            p 
-                                                span.i-envelope
-                                                | &nbsp;
-                                                span info@cyprogroup.club
-                                                
-                                    li
-                                        .contact_map_unit
-                                            .contact_map
-                                                | <iframe class="actAsDiv" width="350" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=ru&amp;q=Grigori%20Afxentiou%202%2C%20Larnaca%2C%20Cyprus&amp;aq=0&amp;ie=UTF8&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-                                            .contact_block_addr Ларнака, Кипр
-                                            p Акамия Центр, офис 103, <br> ул.Гр. Афксентиу 2
-                                        
-                                            p 
-                                                span.i-mobile
-                                                | &nbsp;
-                                                span +35 799 69 55 80
-                                            p 
-                                                span.i-envelope
-                                                | &nbsp;
-                                                span info@cyprogroup.club
-                                                
-                                                
-                                                
-                //-.footer
-                    .section_inner.clearfix
+                    +contacts_section()
                         
                         
         .overlay

@@ -1,8 +1,11 @@
-.section {
+.main_content {
 
-  &:first-child {
+  &.mod_1 {
     padding-top: 130px;
   }
+}
+
+.section {
 
   &_caption {
     padding: 15px;
@@ -28,12 +31,16 @@
 }
 
 .how_it_works {
-  min-height: 100vh;
   background: url(../i/bg_how_it_works.jpg) no-repeat 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: 100vh;
+
+  &:first-child {
+    padding-top: 130px;
+  }
 
   &_steps {
     @extend %clearfix;
@@ -364,7 +371,7 @@
 
   @include respond-to-min($resp_step_2) {
     margin-bottom: 50px;
-  }  
+  }
 }
 
 .contacts_section {
@@ -473,7 +480,18 @@
     font-size: 16px;
     color: #aaa;
     margin-bottom: 10px;
+    
+    span, a {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
   }
+  
+  a {
+    color: #aaa;
+  }
+  
 }
 
 .contact_block_addr {
@@ -488,7 +506,7 @@
   height: 200px;
   overflow: hidden;
   margin-bottom: 20px;
-  
+
   iframe {
     width: 100% !important;
   }

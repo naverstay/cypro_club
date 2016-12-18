@@ -1,4 +1,5 @@
-var callback_popup, body, header, wnd, doc, bsTimer;
+var callback_popup, question_popup,
+    body, header, wnd, doc, bsTimer;
 
 $(function ($) {
     header = $('.header');
@@ -23,8 +24,28 @@ $(function ($) {
         }
     });
 
+    question_popup = $('#question_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'dialog_close_butt_mod_1 dialog_g_size_1 ',
+        appendTo: '.wrapper',
+        width: 570,
+        draggable: true,
+        open: function (event, ui) {
+
+        },
+        close: function (event, ui) {
+
+        }
+    });
+
     body.delegate('.callbackBtn', 'click', function () {
         callback_popup.dialog('open');
+        return false;
+    }).delegate('.questionBtn', 'click', function () {
+        question_popup.dialog('open');
         return false;
     });
 
@@ -106,7 +127,6 @@ $(window).on('resize', function () {
         at: "center center",
         of: window
     });
-
 
     clearTimeout(bsTimer);
 

@@ -8,7 +8,7 @@
   padding-top: 10px;
   line-height: 100px;
   z-index: 15;
-  
+
   .section_inner {
     //padding: 0 25px;
   }
@@ -61,7 +61,7 @@
   .open_menu & {
     @include transform_rotate(90);
   }
-  
+
   @include respond-to-min($resp_step_2) {
     display: none;
   }
@@ -213,7 +213,6 @@
   font-size: 16px;
   line-height: 22px;
 
-
   &:before {
     content: $i-mobile;
     position: absolute;
@@ -293,6 +292,8 @@
 
 .contact_phones {
   @extend %clearfix;
+  margin-bottom: 10px;
+  padding-right: 10px;
 
   dt {
     @extend %icon_pseudo;
@@ -314,6 +315,12 @@
       color: #ffb600;
       margin-top: -10px;
     }
+
+    &._email {
+      &:before {
+        content: $i-envelope;
+      }
+    }
   }
 
   dd {
@@ -329,6 +336,9 @@
     color: #fff;
   }
 
+  a {
+    color: inherit;
+  }
 }
 
 // *********  menu
@@ -349,7 +359,7 @@
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
-  max-width: 330px;
+  max-width: 350px;
 }
 
 .main_menu {
@@ -368,7 +378,6 @@
   padding-left: 32px;
   text-decoration: none;
 }
-
 
 .nav_link {
   display: block;

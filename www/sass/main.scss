@@ -12,6 +12,10 @@ body {
   color: $default_t_color;
 }
 
+b {
+  font-weight: bold;
+}
+
 .hide {
   display: none !important;
 }
@@ -26,14 +30,15 @@ body {
 }
 
 .wrapper {
+  @extend %clearfix;
   position: relative;
+  //overflow: hidden;
   //min-height: 100%;
 
   .club & {
     min-height: 100%;
     //padding-top: 130px;
   }
-
 }
 
 .is_overlay {
@@ -137,6 +142,9 @@ body {
     border-color: #f00;
   }
 
+  @at-root textarea#{&} {
+    height: 150px;
+  }
 }
 
 .abs_holder {

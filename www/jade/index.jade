@@ -45,6 +45,101 @@ html(lang='ru')
                                         p ОСТАВЬТЕ ЗАЯВКУ
                                         div на бесплатную консультацию по выбору отдыха
 
+                    .services.section
+                        h2.how_it_works_caption.section_caption.caption_bg
+                            .section_inner
+                                span.caption_text Получить полный каталог вилл и апартаментов-студий
+                                a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
+ 
+                        .section_inner
+                            .object_list.objectSlider
+                                +loop_while(6)
+                                    .slide 
+                                        .object_unit
+                                            a.object_img(href='#')
+                                                img(src='i/villa/villa_1.jpg')
+                                            
+                                            ul.object_gallery
+                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-1.jpg')
+                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-2.jpg')
+                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-3.jpg')
+                                            
+                                            .object_caption Вилла VL 888
+                                                
+                                            .object_tip 100 м от моря, рядом с ресторанами и мини-маркетом. Несколько минут езды до турзоны.
+                                            
+                                            .object_price 
+                                                ._daily 15 - 22 € в день с человека
+                                                ._weekly 615 - 925 € в неделю
+                                
+                                            .object_description Вилла прекрасно расположена для спокойного семейного отдыха у моря в районе Айя-Текла. Уютная трехспальная вилла с частным бассейном находится всего в 100 м от моря. 
+                                                a(href='#'): b Подробнее...
+                                                
+                                            dl.object_features
+                                                dt Спален
+                                                dd 3
+                                                
+                                                dt Ванных
+                                                dd 3
+                                                
+                                                dt Максимальное количество человек
+                                                dd 6
+                                                
+                                                dt Ближайший аэропорт
+                                                dd Ларнака (45 км)
+                                                
+                    
+                    .services.section
+                        h2.how_it_works_caption.section_caption.caption_bg
+                            .section_inner
+                                span.caption_text Аренда удобных апартаментов для вашего отдыха
+                                a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
+ 
+                        .section_inner
+                            .object_list.objectSlider
+                                +loop_while(6)
+                                    .slide 
+                                        .object_unit
+                                            a.object_img(href='#')
+                                                img(src='i/villa/villa_1.jpg')
+                                            
+                                            ul.object_gallery
+                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-1.jpg')
+                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-2.jpg')
+                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-3.jpg')
+                                            
+                                            .object_caption Вилла VL 888
+                                                
+                                            .object_tip 100 м от моря, рядом с ресторанами и мини-маркетом. Несколько минут езды до турзоны.
+                                            
+                                            .object_price 
+                                                ._daily 15 - 22 € в день с человека
+                                                ._weekly 615 - 925 € в неделю
+                                
+                                            .object_description Вилла прекрасно расположена для спокойного семейного отдыха у моря в районе Айя-Текла. Уютная трехспальная вилла с частным бассейном находится всего в 100 м от моря. 
+                                                a(href='#'): b Подробнее...
+                                                
+                                            dl.object_features
+                                                dt Спален
+                                                dd 3
+                                                
+                                                dt Ванных
+                                                dd 3
+                                                
+                                                dt Максимальное количество человек
+                                                dd 6
+                                                
+                                                dt Ближайший аэропорт
+                                                dd Ларнака (45 км)
+                    
+                    .section
+                        h2.how_it_works_caption.section_caption.caption_bg
+                            .section_inner
+                                span.caption_text._full_cat
+                                    span.clr_green ПОЛУЧИТЬ ПОЛНЫЙ КАТАЛОГ <br>
+                                    span вилл и апартаментов-студий
+                                a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
+
                     .section.promo
                         .promo_slider_holder
                             .promo_slider.promoSlider
@@ -173,13 +268,42 @@ html(lang='ru')
                                 li 
                                     .benefit_unit 
                                         .benefit_img
-                                            img(src='i/cart.png')
+                                            img(src='i/cart.svg')
                                         .benefit_caption КОМПЛЕКСНОСТЬ
                                         p Ассортимент апартаментов на любой вкус. Более 230 неповторимых вариантов
                                         
-                    +contacts_section()
+                    //+contacts_section()
                         
+                    .footer
+                        .section_inner.clearfix
+                            .logo_block
+                                a.logo(href='#')
+                                    img(src='i/logo.png')
+                                    span Традиции и надежность
+
+                            ul.main_menu
+                                li.main_m_item
+                                    dl.contact_phones
+                                        dt Украина:
+                                        dd +38 (097) 17 11 844
+                                        dt &nbsp;
+                                        dd +38 (050) 62 21 981
+
+                                        dt Кипр:
+                                        dd +35 (799) 69 55 80
+                                        
+                                        dt._email Почта:
+                                        dd 
+                                            a(href='mailto:info@cyprogroup.club') info@cyprogroup.club
+                                li.main_m_item
+                                    a.callback_btn.btn_v1.btn_blue_transp.questionBtn(href='#') Задать вопрос
+                        
+            +weather()
+
+            +exchange()
+                                    
         .overlay
 
         +popup()
+        
     +scripts(true)

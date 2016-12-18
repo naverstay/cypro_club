@@ -298,7 +298,6 @@
   display: inline-block;
   vertical-align: top;
   margin-bottom: 20px;
-  width: 380px;
   max-width: 100%;
 
   .send_order {
@@ -307,6 +306,10 @@
     @include respond-to-min($resp_step_4) {
       padding-left: 103px;
     }
+  }
+
+  @include respond-to-min($resp_step_4) {
+    width: 380px;
   }
 
   @include respond-to-min($resp_step_2 + 80) {
@@ -352,6 +355,216 @@
       display: none;
     }
   }
+}
+
+.object_list {
+  @extend %clearfix;
+  position: relative;
+  margin: 0 -10px 10px;
+
+  @at-root ul#{&} {
+    @include respond-to-min($resp_step_2) {
+      margin-right: -1%;
+    }
+
+    > li {
+      float: left;
+      width: 100%;
+
+      @include respond-to-min(620px) {
+        width: 50%;
+      }
+
+      @include respond-to-min(960px) {
+        width: 33%;
+      }
+    }
+  }
+
+  &.slick-initialized {
+    padding: 0 35px;
+
+    @include respond-to-min($resp_step_2 + 100) {
+      margin-left: -45px;
+      margin-right: -45px;
+    }
+
+    .slick-next,
+    .slick-prev {
+      display: block;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+
+    &:before {
+      content: $i-arrow_right;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+
+    &:before {
+      content: $i-arrow_left;
+    }
+  }
+
+  .slick-next,
+  .slick-prev {
+    @extend %icon_pseudo;
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
+    font-size: 0;
+    background: none;
+
+    &:before {
+      font-size: 40px;
+      color: #a9a9a9;
+    }
+
+  }
+
+  .slide {
+    padding: 10px;
+  }
+
+}
+
+.object_unit {
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  padding-bottom: 30px;
+  border-radius: 0 0 8px 8px;
+
+  > .object_img {
+    height: 207px;
+    overflow: hidden;
+  }
+}
+
+.object_description {
+  font-size: 14px;
+  line-height: 21px;
+  padding: 12px 10px;
+  color: #001000;
+
+  a {
+    color: #23313e;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.object_caption {
+  font-size: 18px;
+  color: #000100;
+  padding: 0 10px;
+}
+
+.object_img {
+  display: block;
+
+  img {
+    display: block;
+    min-width: 100%;
+  }
+}
+
+.object_gallery {
+  @extend %clearfix;
+  margin-left: -10px;
+  margin-right: -1%;
+  padding: 10px 0;
+
+  li {
+    width: 33%;
+    float: left;
+    padding-left: 10px;
+  }
+
+  .object_img {
+    height: 82px;
+    overflow: hidden;
+
+    img {
+      margin: 0 -11px;
+    }
+  }
+}
+
+.object_tip {
+  color: #7f7f7f;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 5px 5px 10px;
+}
+
+.object_price {
+  text-align: center;
+  background: #27ae60;
+
+  ._daily {
+    color: #fff;
+    font-weight: bold;
+    line-height: 28px;
+    font-size: 20px;
+    letter-spacing: -.02em;
+  }
+
+  ._weekly {
+    font-size: 12px;
+    line-height: 20px;
+    padding-bottom: 2px;
+    margin: 0 32px;
+    color: #a1e2bd;
+    border-top: 1px solid #a1e2bd;
+  }
+}
+
+.object_features {
+  overflow: hidden;
+  margin: 0 22px;
+
+  dt, dd {
+    padding: 9px 0 7px;
+  }
+
+  dt {
+    text-align: left;
+    float: left;
+    position: relative;
+    clear: both;
+    color: #878c92;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 500px;
+      background: #d9d9d9;
+      height: 1px;
+    }
+
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  dd {
+    float: right;
+    color: #000;
+  }
+
 }
 
 // **********  text

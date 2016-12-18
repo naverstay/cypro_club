@@ -9,7 +9,7 @@
   }
 
   .club & {
-    min-height: 300px;
+    //min-height: 300px;
   }
 }
 
@@ -17,7 +17,7 @@
   background: #f4f4f4;
   padding: 0 20px 20px;
   text-align: center;
-  
+
   p {
     margin-bottom: 20px;
   }
@@ -35,6 +35,40 @@
 
   .open_menu & {
     display: block;
+  }
+}
+
+.exchange_holder {
+  margin-bottom: 20px;
+
+  @include respond-to-min($resp_step_4) {
+    float: right;
+    max-width: 50%;
+  }
+
+  @include respond-to-min($resp_step_2) {
+
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 30;
+  }
+
+}
+
+.weather_holder {
+  margin-bottom: 20px;
+
+  @include respond-to-min($resp_step_4) {
+    float: left;
+    max-width: 50%;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 30;
   }
 }
 

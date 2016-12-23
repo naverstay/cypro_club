@@ -48,75 +48,320 @@ html(lang='ru')
                     .services.section
                         h2.how_it_works_caption.section_caption.caption_bg
                             .section_inner
-                                span.caption_text Получить полный каталог вилл и апартаментов-студий
+                                //-span.caption_text Получить полный каталог вилл и апартаментов-студий
+                                span.caption_text._full_cat
+                                    span.clr_green ПОЛУЧИТЬ ПОЛНЫЙ КАТАЛОГ <br>
+                                    span вилл и апартаментов-студий
+                                
                                 a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
  
                         .section_inner
                             .object_list.objectSlider
-                                +loop_while(6)
-                                    .slide 
-                                        .object_unit
-                                            a.object_img(href='#')
-                                                img(src='i/villa/villa_1.jpg')
+                                .slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='#')
+                                            img(src='i/villa/villa_888.jpg')
+                                        
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_888.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_888-2b.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_888-3b.jpg')
+                                        
+                                        .object_caption Вилла VL 888
                                             
-                                            ul.object_gallery
-                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-1.jpg')
-                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-2.jpg')
-                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-3.jpg')
+                                        .object_tip 100 м от моря, рядом с ресторанами и мини-маркетом. Несколько минут езды до турзоны.
+                                        
+                                        .object_price 
+                                            ._daily 15 - 22 € в день с человека
+                                            ._weekly 615 - 925 € в неделю
+                            
+                                        .object_description Вилла прекрасно расположена для спокойного семейного отдыха у моря в районе Айя-Текла. Уютная трехспальная вилла с частным бассейном находится всего в 100 м от моря.  
+                                            a(href='#'): b Подробнее...
                                             
-                                            .object_caption Вилла VL 888
-                                                
-                                            .object_tip 100 м от моря, рядом с ресторанами и мини-маркетом. Несколько минут езды до турзоны.
+                                        dl.object_features
+                                            dt Спален
+                                            dd 3
                                             
-                                            .object_price 
-                                                ._daily 15 - 22 € в день с человека
-                                                ._weekly 615 - 925 € в неделю
-                                
-                                            .object_description Вилла прекрасно расположена для спокойного семейного отдыха у моря в районе Айя-Текла. Уютная трехспальная вилла с частным бассейном находится всего в 100 м от моря. 
-                                                a(href='#'): b Подробнее...
-                                                
-                                            dl.object_features
-                                                dt Спален
-                                                dd 3
-                                                
-                                                dt Ванных
-                                                dd 3
-                                                
-                                                dt Максимальное количество человек
-                                                dd 6
-                                                
-                                                dt Ближайший аэропорт
-                                                dd Ларнака (45 км)
-                                                
-                    
+                                            dt Ванных
+                                            dd 3
+                                            
+                                            dt Максимальное количество человек
+                                            dd 6
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (45 км)
+                
+                                .slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='#')
+                                            img(src='i/villa/villa_872.jpg')
+                                        
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_872.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_872-2b.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_872-3b.jpg')
+                                        
+                                        .object_caption Вилла VL 872
+                                            
+                                        .object_tip На пляже, 7 минут езды до центра Ларнаки, пешком до ресторанов, баров и других развлечений
+                                        
+                                        .object_price 
+                                            ._daily 20 € в день с человека
+                                            ._weekly 800 € в неделю
+                            
+                                        .object_description Вилла расположена всего в нескольких шагах от моря рядом с минимаркетом, большим количество ресторанов и кафе. В 2х минутах ходьбы есть автобусная остановка Вы можете добраться 
+                                            a(href='#'): b Подробнее...
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 3
+                                            
+                                            dt Ванных
+                                            dd 2
+                                            
+                                            dt Максимальное количество человек
+                                            dd 6
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                            
+                                .slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='#')
+                                            img(src='i/villa/villa_868.jpg')
+                                        
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_868.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_868-2b.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_868-3b.jpg')
+                                        
+                                        .object_caption Вилла VL 868
+                                            
+                                        .object_tip Пляж 200м, Турзона, Курорт, Рядом с ресторанами и барами, Рядом с магазинами
+                                        
+                                        .object_price 
+                                            ._daily 18 - 23 € в день с человека
+                                            ._weekly 1100 - 1270 € в неделю
+                            
+                                        .object_description Вилла расположена в районе Каппарис, в Протарасе – идеальном месте для семейного отдыха. Песчаный пляж с кристально чистой водой, а также рестораны бары и магазины находятся на расстоянии 
+                                            a(href='#'): b Подробнее...
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 3
+                                            
+                                            dt Ванных
+                                            dd 3
+                                            
+                                            dt Максимальное количество человек
+                                            dd 8
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (65 км)
+                                            
+                                .slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='#')
+                                            img(src='i/villa/villa_adonis.jpg')
+                                        
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_adonis.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_adonis-2b.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_adonis-3b.jpg')
+                                        
+                                        .object_caption Вилла Adonis
+                                            
+                                        .object_tip Рядом с пляжем. До центра Ларнаки 15 минут на машине.
+                                        
+                                        .object_price 
+                                            ._daily 23 - 44 € в день с человека
+                                            ._weekly 1275 - 2444 € в неделю
+                            
+                                        .object_description Идеально подходит для компании друзей или семьи, кто желает отдохнуть в тишине. Вилла полностью кондиционирована и оборудована всем необходимым для Вашего комфортного отдыха. 
+                                            a(href='#'): b Подробнее...
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 4
+                                            
+                                            dt Ванных
+                                            dd 5
+                                            
+                                            dt Максимальное количество человек
+                                            dd 8
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                            
+                                .slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='#')
+                                            img(src='i/villa/villa_nefeli.jpg')
+                                        
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_nefeli.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_nefeli-2b.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_nefeli-3b.jpg')
+                                        
+                                        .object_caption Вилла Nefeli
+                                            
+                                        .object_tip Рядом с пляжем. Центр турзоны, пешком до развлечений.
+                                        
+                                        .object_price 
+                                            ._daily 46 - 50 € в день с человека
+                                            ._weekly 3200 - 3500 € в неделю
+                            
+                                        .object_description Вилла в 50 метрах от моря на территории которой есть сад, барбекю с барной стойкой и садовая мебель, имеет все необходимое для незабываемого роскошного отдыха. <br> Дом отлично оборудован. 
+                                            a(href='#'): b Подробнее...
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 5
+                                            
+                                            dt Ванных
+                                            dd 6
+                                            
+                                            dt Максимальное количество человек
+                                            dd 10
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                            
+                                .slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='#')
+                                            img(src='i/villa/villa_larnaca.jpg')
+                                        
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_larnaca.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_larnaca-2b.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_larnaca-3b.jpg')
+                                        
+                                        .object_caption Вилла Larnaca Bay 8
+                                            
+                                        .object_tip Рядом с пляжем. Центр турзоны, пешком до развлечений.
+                                        
+                                        .object_price 
+                                            ._daily 22 - 41 € в день с человека
+                                            ._weekly 902 - 1714 € в неделю
+                            
+                                        .object_description Вилла в 50 метрах от моря на территории которой есть сад, барбекю с барной стойкой и садовая мебель, имеет все необходимое для незабываемого роскошного отдыха. <br>  Дом отлично оборудован. 
+                                            a(href='#'): b Подробнее...
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 3
+                                            
+                                            dt Ванных
+                                            dd 3
+                                            
+                                            dt Максимальное количество человек
+                                            dd 6
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                            
+                
                     .services.section
                         h2.how_it_works_caption.section_caption.caption_bg
                             .section_inner
                                 span.caption_text Аренда удобных апартаментов для вашего отдыха
-                                a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
+                                
+                                .caption_description 
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad architecto, aut beatae cum cumque cupiditate debitis distinctio dolore ducimus ea eaque earum eos facere fuga illum impedit magni maiores modi nobis nostrum odio odit perspiciatis quam sed sit suscipit tenetur velit, vero, voluptas. Aspernatur eveniet exercitationem explicabo id iste itaque iusto sunt totam. Dolor dolores ea eaque id molestiae nam nemo nesciunt placeat quam sapiente. Asperiores aut distinctio eius est facere hic ipsam itaque iusto laudantium non, odio quam quos reiciendis! Corporis culpa dolores ducimus eaque exercitationem facilis harum id illum incidunt laboriosam obcaecati optio possimus, quas rem sapiente temporibus, tenetur velit vero vitae voluptatibus. Ab ad doloribus eum, illum impedit minima, nihil nobis perspiciatis quas quasi, quidem rem. Aperiam at, beatae deleniti doloribus earum error esse et eum excepturi inventore ipsum iste labore magni maiores nemo nihil nostrum obcaecati officia quo reprehenderit saepe sed, sunt tenetur veniam voluptas. A ab ad architecto aspernatur at blanditiis commodi culpa cum deleniti deserunt dignissimos distinctio dolore doloribus eaque enim, expedita facere illo in iste iusto labore laborum libero maiores nam nihil obcaecati perferendis qui quibusdam recusandae reprehenderit saepe sequi sit temporibus tenetur ut vitae voluptate? A architecto eos facere ipsum molestiae.
+                                
+                                //-a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
  
                         .section_inner
                             .object_list.objectSlider
-                                +loop_while(6)
+                                +loop_while(2)
                                     .slide 
                                         .object_unit
-                                            a.object_img(href='#')
-                                                img(src='i/villa/villa_1.jpg')
+                                            .object_img_loader: a.object_img.objectMain(href='#')
+                                                img(src='i/apartments/ap_1126-1b.jpg')
                                             
                                             ul.object_gallery
-                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-1.jpg')
-                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-2.jpg')
-                                                li: a.object_img(href='#'): img(src='i/villa/villa_1-3.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_1126-1b.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_1126-2b.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_1126-3b.jpg')
                                             
-                                            .object_caption Вилла VL 888
+                                            .object_caption Апартаменты AL 1126
                                                 
-                                            .object_tip 100 м от моря, рядом с ресторанами и мини-маркетом. Несколько минут езды до турзоны.
-                                            
+                                            .object_tip Рядом с пляжем. Центр, рядом с развлечениями.
+
                                             .object_price 
-                                                ._daily 15 - 22 € в день с человека
-                                                ._weekly 615 - 925 € в неделю
+                                                ._daily 11 - 18 € в день с человека
+                                                ._weekly 300 - 500 € в неделю
                                 
-                                            .object_description Вилла прекрасно расположена для спокойного семейного отдыха у моря в районе Айя-Текла. Уютная трехспальная вилла с частным бассейном находится всего в 100 м от моря. 
+                                            .object_description Апартамент состоит из гостиной, отдельной полностью оборудованой кухни, двух спален и ванной комнаты.  В гостиной для Вас две софы, ТВ с DVD плеером, выход на просторный угловой балкон. 
+                                                a(href='#'): b Подробнее...
+                                                
+                                            dl.object_features
+                                                dt Спален
+                                                dd 2
+                                                
+                                                dt Ванных
+                                                dd 1
+                                                
+                                                dt Максимальное количество человек
+                                                dd 4
+                                                
+                                                dt Ближайший аэропорт
+                                                dd Ларнака (10 км)
+                                                
+                                    .slide 
+                                        .object_unit
+                                            .object_img_loader: a.object_img.objectMain(href='#')
+                                                img(src='i/apartments/ap_791-1.jpg')
+                                            
+                                            ul.object_gallery
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_791-1.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_791-2.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_791-3.jpg')
+                                            
+                                            .object_caption Апартаменты AL 791
+                                                
+                                            .object_tip Пляж – 5-10 мин ходьбы. Рядом с магазинами, ресторанами.
+
+                                            .object_price 
+                                                ._daily 13 - 26 € в день с человека
+                                                ._weekly 275 - 537 € в неделю
+                                
+                                            .object_description Апартамент состоит из гостиной, кухни, ванной комнаты и одной спальни.В гостиной есть мягкая кожаная мебель, ЖК телевизор,  спутниковое телевидение и Интернет, а также выход на балкон.  
+                                                a(href='#'): b Подробнее...
+                                                
+                                            dl.object_features
+                                                dt Спален
+                                                dd 1
+                                                
+                                                dt Ванных
+                                                dd 1
+                                                
+                                                dt Максимальное количество человек
+                                                dd 2-3
+                                                
+                                                dt Ближайший аэропорт
+                                                dd Ларнака (10 км)
+                                                
+                                    .slide 
+                                        .object_unit
+                                            .object_img_loader: a.object_img.objectMain(href='#')
+                                                img(src='i/apartments/ap_1073-1.jpg')
+                                            
+                                            ul.object_gallery
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_1073-1.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_1073-2.jpg')
+                                                li: a.object_img.objectThumb(href='#'): img(src='i/apartments/ap_1073-3.jpg')
+                                            
+                                            .object_caption Апартаменты AL 1073 townhouse
+                                                
+                                            .object_tip На пляже, 7 минут езды до центра Ларнаки.
+
+                                            .object_price 
+                                                ._daily 21 € в день с человека
+                                                ._weekly 875 € в неделю
+                                
+                                            .object_description На первом этаже находится открытого плана гостиная , обеденная зона и кухня. В гостиной мягкий уголок, здесь же есть телевизор, раздвижные двери ведут на террасу.  
                                                 a(href='#'): b Подробнее...
                                                 
                                             dl.object_features
@@ -124,21 +369,25 @@ html(lang='ru')
                                                 dd 3
                                                 
                                                 dt Ванных
-                                                dd 3
+                                                dd 2
                                                 
                                                 dt Максимальное количество человек
                                                 dd 6
                                                 
                                                 dt Ближайший аэропорт
-                                                dd Ларнака (45 км)
+                                                dd Ларнака (15 км)
+                                                
+                                                
                     
                     .section
                         h2.how_it_works_caption.section_caption.caption_bg
                             .section_inner
-                                span.caption_text._full_cat
+                                span.caption_text
+                                    span Получить полный каталог вилл и апартаментов-студий
+                                //-span.caption_text._full_cat
                                     span.clr_green ПОЛУЧИТЬ ПОЛНЫЙ КАТАЛОГ <br>
                                     span вилл и апартаментов-студий
-                                a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
+                                //-a.caption_btn.btn_v3.btn_black(href='#') Получить полный каталог
 
                     .section.promo
                         .promo_slider_holder
@@ -272,9 +521,9 @@ html(lang='ru')
                                         .benefit_caption КОМПЛЕКСНОСТЬ
                                         p Ассортимент апартаментов на любой вкус. Более 230 неповторимых вариантов
                                         
-                    //+contacts_section()
+                    +contacts_section(true)
                         
-                    .footer
+                    //-.footer
                         .section_inner.clearfix
                             .logo_block
                                 a.logo(href='#')

@@ -65,6 +65,21 @@
   }
 }
 
+.caption_description {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  clear: both;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: left;
+  
+  p {
+    margin-top: 20px;
+  }
+}
+
 .how_it_works {
   background: url(../i/bg_how_it_works.jpg) no-repeat 50%;
   -webkit-background-size: cover;
@@ -410,6 +425,7 @@
 }
 
 .contacts_section {
+  @extend %clearfix;
   position: relative;
   background: url(../i/contacts_bg.jpg) no-repeat 50%;
   -webkit-background-size: cover;
@@ -426,6 +442,53 @@
     right: 0;
     content: '';
     background: rgba(0, 0, 0, .75);
+  }
+
+  &._simple {
+    .contact_info {
+      width: 100%;
+    }
+
+    .contact_block_text {
+
+      @include respond-to-min($resp_step_4) {
+        float: left;
+        padding-right: 20px;
+      }
+    }
+
+    .contact_block_btn {
+      
+      @include respond-to-min($resp_step_4) {
+        float: left;
+      }
+    }
+
+    .contact_share_block {
+      float: left;
+      text-align: center;
+      padding-bottom: 20px;
+
+      @include respond-to-min($resp_step_2) {
+        min-width: 25%;
+      }
+    }
+
+    .contact_block_questions {
+      clear: both;
+      margin-top: 10px;
+
+      @include respond-to-min($resp_step_2) {
+        min-width: 50%;
+        float: left;
+        clear: none;
+      }
+    }
+
+    .contact_block_logo {
+      float: left;
+      margin-right: 20px;
+    }
   }
 }
 

@@ -291,7 +291,7 @@
 .slide_info {
   @extend %clearfix;
   background: #1f303a;
-  padding: 16px 45px 16px 27px;
+  padding: 16px 45px 11px 27px;
 }
 
 .slide_btn {
@@ -440,6 +440,11 @@
   padding-bottom: 30px;
   border-radius: 0 0 8px 8px;
 
+  .object_img_loader {
+    height: 207px;
+    overflow: hidden;
+  }
+
   > .object_img {
     height: 207px;
     overflow: hidden;
@@ -449,7 +454,7 @@
 .object_description {
   font-size: 14px;
   line-height: 21px;
-  padding: 12px 10px;
+  padding: 12px 5px;
   color: #001000;
 
   a {
@@ -474,6 +479,7 @@
   img {
     display: block;
     min-width: 100%;
+    max-height: 100%;
   }
 }
 
@@ -494,7 +500,7 @@
     overflow: hidden;
 
     img {
-      margin: 0 -11px;
+      //margin: 0 -11px;
     }
   }
 }
@@ -504,6 +510,7 @@
   font-size: 12px;
   line-height: 14px;
   padding: 5px 5px 10px;
+  min-height: 43px;
 }
 
 .object_price {

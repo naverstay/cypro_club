@@ -287,7 +287,17 @@
   &:hover {
     background: darken(#bfc4ca, 5%);
   }
+}
 
+.small_contacts {
+  clear: both;
+
+  @include respond-to-max($resp_step_4) {
+    .contact_phones dt,
+    .contact_phones dd {
+      font-size: 14px;
+    }
+  }
 }
 
 .contact_phones {

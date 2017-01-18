@@ -63,8 +63,9 @@ mixin header()
                     
 mixin contacts_section(small)
     #contacts.contacts_section.section(class = small ? '_simple' : '')
-        h2.section_caption.caption_bg
-            span.section_inner КОНТАКТЫ
+        - if (!small)
+            h2.section_caption.caption_bg
+                span.section_inner КОНТАКТЫ
 
         .section_inner
             .contact_block
@@ -84,7 +85,19 @@ mixin contacts_section(small)
 
                         a.contact_block_btn.green_btn_2.questionBtn(href='#') Задать вопрос
                         
-                - if (!small)
+                - if (small)
+                    .small_contacts
+                        dl.contact_phones
+                            dt Украина:
+                            dd +38 (097) 17 11 844
+                            dt &nbsp;
+                            dd +38 (050) 62 21 981
+
+                            dt._email Почта: 
+                            dd
+                                a(href='mailto:info@cyprogroup.club') info@cyprogroup.club
+                
+                - else
                     ul.contact_maps
                         li
                             .contact_map_unit

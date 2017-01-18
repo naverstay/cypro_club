@@ -65,6 +65,56 @@
   }
 }
 
+.text_block {
+  padding: 30px 0;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .section_inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  p {
+    font-size: 16px;
+    color: #000;
+  }
+}
+
+.text_img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .backstretch {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .5);
+    }
+  }
+}
+
+.sub_caption_text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .caption_description {
   display: inline-block;
   vertical-align: top;
@@ -74,9 +124,19 @@
   font-size: 14px;
   line-height: 1.2;
   text-align: left;
-  
+
   p {
     margin-top: 20px;
+  }
+
+  ul {
+    padding-left: 40px;
+    list-style: disc;
+    padding-bottom: 5px;
+
+    li {
+      margin: 20px 0;
+    }
   }
 }
 
@@ -383,6 +443,10 @@
 
   @include respond-to-min($resp_step_2) {
     padding-top: 40px;
+
+    ._simple & {
+      padding-top: 20px;
+    }
   }
 }
 
@@ -394,8 +458,11 @@
     float: left;
     width: 30%;
     text-align: left;
-  }
 
+    ._simple & {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .contact_block_logo {
@@ -445,6 +512,8 @@
   }
 
   &._simple {
+    padding-bottom: 5px;
+
     .contact_info {
       width: 100%;
     }
@@ -458,19 +527,22 @@
     }
 
     .contact_block_btn {
-      
+
       @include respond-to-min($resp_step_4) {
-        float: left;
+        float: right;
       }
     }
 
     .contact_share_block {
-      float: left;
+      float: right;
+      margin-right: -10px;
       text-align: center;
       padding-bottom: 20px;
 
       @include respond-to-min($resp_step_2) {
         min-width: 25%;
+        float: left;
+        margin-right: 0;
       }
     }
 
@@ -516,6 +588,7 @@
 }
 
 .contact_block_questions {
+  @extend %clearfix;
   text-align: center;
   margin-top: 20px;
 

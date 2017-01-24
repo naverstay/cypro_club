@@ -15,30 +15,63 @@
 
   .club & {
     position: fixed;
-    padding: 15px 0;
-    background: #29333d;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+    padding: 10px 0;
+    line-height: 75px;
+    background: rgba(0, 0, 0, .7);
+    //box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
 
-    &.header_small {
-      padding: 5px 0 0;
-      line-height: 70px;
+    .sh_link {
+      background: none;
+    }
 
-      .logo img {
-        max-width: 55px;
+    .phones_callback_btn {
+      font-size: 14px;
+      margin: 0 0 3px;
+      padding: 4px 10px;
+      border-radius: 0;
+    }
+    
+    .phones_block {
+      font-size: 14px;
+    }
+
+    .header_callback {
+      color: #fff;
+    }
+    
+    .nav_link {
+      color: #fff;
+    }
+
+    .logo {
+      span {
+        color: #fff;
+      }
+
+      img {
+        max-width: 70px;
       }
     }
+    //&.header_small {
+    //  padding: 5px 0 0;
+    //  line-height: 70px;
+    //
+    //  .logo img {
+    //    max-width: 55px;
+    //  }
+    //}
   }
 
-  @include respond-to-max($resp_step_2) {
-    .club & {
-      padding: 0 !important;
-      line-height: 70px;
-
-      .logo img {
-        max-width: 55px;
-      }
-    }
-  }
+  //@include respond-to-max($resp_step_2) {
+  //  .club & {
+  //    padding: 0 !important;
+  //    line-height: 70px;
+  //
+  //    .logo img {
+  //      max-width: 55px;
+  //    }
+  //  }
+  //}
 }
 
 .mob_menu {
@@ -149,8 +182,12 @@
       padding-left: 38px;
     }
 
+    .club & {
+      margin-top: 15px;
+    }
+
     .header_small & {
-      margin-top: 10px;
+      //margin-top: 10px;
     }
   }
 }

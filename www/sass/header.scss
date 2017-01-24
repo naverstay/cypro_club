@@ -30,7 +30,7 @@
       padding: 4px 10px;
       border-radius: 0;
     }
-    
+
     .phones_block {
       font-size: 14px;
     }
@@ -38,7 +38,7 @@
     .header_callback {
       color: #fff;
     }
-    
+
     .nav_link {
       color: #fff;
     }
@@ -327,7 +327,18 @@
 }
 
 .small_contacts {
-  clear: both;
+  //clear: both;
+  float: left;
+  text-align: left;
+  margin-bottom: 20px;
+  
+  @include respond-to-min($resp_step_4) {
+    max-width: 50%;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    max-width: 40%;
+  }
 
   @include respond-to-max($resp_step_4) {
     .contact_phones dt,
@@ -381,6 +392,11 @@
     line-height: 22px;
     font-size: 18px;
     color: #fff;
+
+    ._simple & {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 
   a {

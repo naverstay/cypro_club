@@ -24,6 +24,10 @@
     height: 44px;
     font-size: 14px;
     margin-top: 20px;
+
+    .club & {
+      border-radius: 0;
+    }
   }
 }
 

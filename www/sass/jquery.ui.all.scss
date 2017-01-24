@@ -58,7 +58,7 @@
   left: 0;
   top: 0;
   //	background: #fff;
-  background: transparentize(#293b47, .6);
+  background: transparentize(#000, .4);
 }
 
 .ui-helper-clearfix {
@@ -79,8 +79,8 @@
     @extend .green_btn;
     cursor: pointer;
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 23px;
+    right: 23px;
     width: 28px;
     height: 28px;
     border-radius: 100%;
@@ -119,6 +119,14 @@
     background: #f4f4f4;
     color: #1d1d1b;
     font-size: 26px;
+    font-weight: bold;
+  }
+
+  .dialog_g_size_2 & {
+    padding: 0 50px;
+    background: #f4f4f4;
+    color: #1d1d1b;
+    font-size: 16px;
     font-weight: bold;
   }
 

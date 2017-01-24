@@ -145,6 +145,21 @@ b {
   @at-root textarea#{&} {
     height: 150px;
   }
+
+  .club & {
+    text-align: left;
+    border-radius: 0;
+  }
+}
+
+.input_w {
+  position: relative;
+  width: 100%;
+}
+
+.form_label {
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .abs_holder {

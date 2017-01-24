@@ -25,6 +25,12 @@ mixin loop_while(counter)
     while i < counter
         -i++;
         block
+        
+mixin object_price()
+    .object_price_w
+        a.object_price_btn.callbackBtn.green_btn_2(href='#') Заказать
+        .object_price
+            block
 
 mixin header()
     div.header
@@ -77,7 +83,19 @@ mixin contacts_section(small)
                     ul.contact_share_block
                         li: a.sh_link.i-facebook(href='#')
                         li: a.sh_link.i-instagram(href='#')
-
+    
+                    - if (small)
+                        .small_contacts
+                            dl.contact_phones
+                                dt Украина:
+                                dd +38 (097) 17 11 844
+                                dt &nbsp;
+                                dd +38 (050) 62 21 981
+    
+                                dt._email Почта: 
+                                dd
+                                    a(href='mailto:info@cyprogroup.club') info@cyprogroup.club
+                        
                     .contact_block_questions
                         .contact_block_text
                             .contact_block_caption ОСТАЛИСЬ ВОПРОСЫ?
@@ -85,7 +103,7 @@ mixin contacts_section(small)
 
                         a.contact_block_btn.green_btn_2.questionBtn(href='#') Задать вопрос
                         
-                - if (small)
+                //- if (small)
                     .small_contacts
                         dl.contact_phones
                             dt Украина:
@@ -97,7 +115,7 @@ mixin contacts_section(small)
                             dd
                                 a(href='mailto:info@cyprogroup.club') info@cyprogroup.club
                 
-                - else
+                - if (!small)
                     ul.contact_maps
                         li
                             .contact_map_unit
@@ -175,13 +193,25 @@ mixin weather()
 mixin popup()
     #callback_popup.popup(style='display:none;')
         form.validateMe(action='#')
-            p Введите ваше имя и телефон и получите  <br>  развернутую консультацию специалиста 
+            p Введите ваше имя и телефон и получите  <br>  развернутую консультацию специалиста
+            
             .form_cell.f_cell_v1
-                input.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]')
+                .form_label
+                    label(for='callback_popup_name') Имя
+                .input_w
+                    input#callback_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]')
+                
             .form_cell.f_cell_v1
-                input.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]')
+                .form_label
+                    label(for='callback_popup_phone') Телефон
+                .input_w
+                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]')
+                
             .form_cell.f_cell_v1
-                input.f_input_v1(placeholder='Введите Ваш e-mail')
+                .form_label
+                    label(for='callback_popup_email') E-mail
+                .input_w
+                    input#callback_popup_email.f_input_v1(placeholder='Введите Ваш e-mail')
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Получить консультацию специалиста
@@ -189,14 +219,30 @@ mixin popup()
     #question_popup.popup(style='display:none;')
         form.validateMe(action='#')
             p Задать вопрос
+            
             .form_cell.f_cell_v1
-                input.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]')
+                .form_label
+                    label(for='question_popup_name') Имя
+                .input_w
+                    input#question_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]')
+                
             .form_cell.f_cell_v1
-                input.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]')
+                .form_label
+                    label(for='question_popup_phone') Телефон
+                .input_w
+                    input#question_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]')
+                
             .form_cell.f_cell_v1
-                input.f_input_v1(placeholder='Введите Ваш e-mail')
+                .form_label
+                    label(for='question_popup_email') E-mail
+                .input_w
+                    input#question_popup_email.f_input_v1(placeholder='Введите Ваш e-mail')
+                
             .form_cell.f_cell_v1
-                textarea.f_input_v1(placeholder='Введите вопрос')
+                .form_label
+                    label(for='question_popup_ask') Вопрос
+                .input_w
+                    textarea#question_popup_ask.f_input_v1(placeholder='Введите вопрос')
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Задать вопрос

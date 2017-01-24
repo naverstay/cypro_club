@@ -12,9 +12,9 @@ $(function ($) {
         modal: true,
         closeOnEscape: true,
         closeText: '',
-        dialogClass: 'dialog_close_butt_mod_1 dialog_g_size_1 ',
+        dialogClass: 'dialog_close_butt_mod_1 dialog_g_size_2 ',
         appendTo: '.wrapper',
-        width: 570,
+        width: 450,
         draggable: true,
         open: function (event, ui) {
 
@@ -29,9 +29,9 @@ $(function ($) {
         modal: true,
         closeOnEscape: true,
         closeText: '',
-        dialogClass: 'dialog_close_butt_mod_1 dialog_g_size_1 ',
+        dialogClass: 'dialog_close_butt_mod_1 dialog_g_size_2 ',
         appendTo: '.wrapper',
-        width: 570,
+        width: 450,
         draggable: true,
         open: function (event, ui) {
 

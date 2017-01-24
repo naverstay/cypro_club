@@ -84,18 +84,22 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 6px;
+  padding: 10px;
   text-align: justify;
   overflow: hidden;
   opacity: 0;
-  background: rgba(255, 255, 255, .9);
+  font-size: 13px;
+  color: #fff;
+  background: rgba(0, 0, 0, .95);
 
   p {
     margin-bottom: 10px;
-    line-height: 17px;
-    color: #29333d;
+  }
 
-    b {
+  .object_description_link {
+    text-align: right;
+
+    a {
       text-decoration: underline;
     }
   }
@@ -107,18 +111,18 @@
 
 .benefits {
   position: relative;
-  background: #fff;
+  background: #fbfbfb;
 
-  &:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: '';
-    background: url(../i/bg_benefits.jpg) no-repeat 50% 0;
-    opacity: .13;
-  }
+  //&:before {
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  right: 0;
+  //  content: '';
+  //  background: url(../i/bg_benefits.jpg) no-repeat 50% 0;
+  //  opacity: .13;
+  //}
 
   .section_caption {
     position: relative;
@@ -127,10 +131,37 @@
 
 }
 
+.service_box {
+  position: relative;
+  z-index: 1;
+  margin: 0 30px;
+  padding: 0 10px;
+  background: rgba(0, 0, 0, .6);
+
+  > div {
+    &:first-child {
+      padding-top: 15px;
+    }
+  }
+
+  .section_caption {
+    padding: 15px;
+  }
+
+  .caption_description ul li {
+    margin: 10px 0;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    width: 50%;
+  }
+}
+
 .benefits_list {
   font-size: 0;
-  padding: 75px 0 35px;
+  padding: 40px 0 35px;
   margin-left: -20px;
+  text-align: center;
 
   > li {
     display: inline-block;
@@ -144,7 +175,7 @@
     }
 
     @include respond-to-min($resp_step_2) {
-      width: 25%;
+      width: 33%;
     }
   }
 }
@@ -153,8 +184,8 @@
   text-align: center;
 
   p {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 18px;
     color: #878c92;
   }
 }
@@ -173,7 +204,7 @@
 
 .benefit_caption {
   text-transform: uppercase;
-  color: #1c2d41;
+  color: #27ae60;
   margin-bottom: 15px;
   font-size: 24px;
   line-height: 29px;
@@ -421,23 +452,29 @@
     background: none;
 
     &:before {
+      @include transition_all(color .3s);
       font-size: 40px;
       color: #a9a9a9;
     }
 
+    &:hover {
+      &:before {
+        color: #27ae60;
+      }
+    }
   }
 
   .slide {
     padding: 10px;
   }
-
 }
 
 .object_unit {
-  text-align: center;
-  border: 1px solid #d9d9d9;
-  padding-bottom: 30px;
-  border-radius: 0 0 8px 8px;
+  @include transition_all(box-shadow .3s);
+  //text-align: center;
+  border: 1px solid rgba(41, 159, 83, .35);
+  padding-bottom: 10px;
+  //border-radius: 0 0 8px 8px;
 
   .object_img_loader {
     height: 207px;
@@ -448,16 +485,33 @@
     height: 207px;
     overflow: hidden;
   }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(7, 23, 12, 0.35);
+  }
 }
 
 .object_description {
-  font-size: 14px;
-  line-height: 21px;
-  padding: 12px 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 12px 10px;
   color: #001000;
+  position: relative;
+  height: 11em;
+
+  p {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    max-height: 7.5em;
+    line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
 
   a {
-    color: #23313e;
     text-decoration: underline;
 
     &:hover {
@@ -466,10 +520,20 @@
   }
 }
 
+.object_description_link {
+
+}
+
 .object_caption {
   font-size: 18px;
   color: #000100;
   padding: 0 10px;
+
+  .slick-initialized & {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .object_img {
@@ -508,8 +572,44 @@
   color: #7f7f7f;
   font-size: 12px;
   line-height: 14px;
-  padding: 5px 5px 10px;
+  padding: 5px 10px 10px;
   min-height: 43px;
+}
+
+.object_price_w {
+  position: relative;
+  height: 51px;
+  overflow: hidden;
+
+  .object_price_btn,
+  .object_price {
+    @include transition_all(top .3s);
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+
+  .object_price {
+    top: 0;
+  }
+
+  .object_price_btn {
+    top: -51px;
+    height: 51px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 51px;
+  }
+
+  &:hover {
+    .object_price_btn {
+      top: 0;
+    }
+
+    .object_price {
+      top: 51px;
+    }
+  }
 }
 
 .object_price {
@@ -536,7 +636,7 @@
 
 .object_features {
   overflow: hidden;
-  margin: 0 22px;
+  margin: 0 10px;
 
   dt, dd {
     padding: 9px 0 7px;

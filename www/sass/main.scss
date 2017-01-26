@@ -10,6 +10,10 @@ html {
 body {
   font: 14px/1.2 $OpenSans;
   color: $default_t_color;
+  
+  &.ov_vis {
+    overflow: visible !important;
+  }
 }
 
 b {

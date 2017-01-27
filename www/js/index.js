@@ -128,5 +128,27 @@ $(function ($) {
         return false;
     });
 
+    $('.sendMailForm').on('submit', function () {
+        var form = $(this);
+
+        var msg = form.serialize() + '&form_title=' + form.find('.form_title').text();
+
+        console.log(form.find('.form_title').text(), msg);
+        
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: msg,
+            success: function (data) {
+                alert('Сообщение отправлено');
+                form.trigger('reset').closest('.ui-dialog').find('.ui-dialog-titlebar-close').click();
+            },
+            error: function (xhr, str) {
+                alert('Возникла ошибка: ' + xhr.responseCode);
+            }
+        });
+
+        return false;
+    });
 
 });

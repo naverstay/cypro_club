@@ -192,57 +192,59 @@ mixin weather()
     
 mixin popup()
     #callback_popup.popup(style='display:none;')
-        form.validateMe(action='#')
+        form.validateMe.sendMailForm(action='send.php' method="POST")
+            .form_title.hide Заявка на консультацию
             p Введите ваше имя и телефон и получите  <br>  развернутую консультацию специалиста
             
             .form_cell.f_cell_v1
                 .form_label
                     label(for='callback_popup_name') Имя
                 .input_w
-                    input#callback_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]')
+                    input#callback_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]' name='order_name')
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='callback_popup_phone') Телефон
                 .input_w
-                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]')
+                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='callback_popup_email') E-mail
                 .input_w
-                    input#callback_popup_email.f_input_v1(placeholder='Введите Ваш e-mail')
+                    input#callback_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email')
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Получить консультацию специалиста
 
     #question_popup.popup(style='display:none;')
-        form.validateMe(action='#')
+        form.validateMe.sendMailForm(action='send.php' method="POST")
+            .form_title.hide Вопрос
             p Задать вопрос
             
             .form_cell.f_cell_v1
                 .form_label
                     label(for='question_popup_name') Имя
                 .input_w
-                    input#question_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]')
+                    input#question_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]' name='order_name')
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='question_popup_phone') Телефон
                 .input_w
-                    input#question_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]')
+                    input#question_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='question_popup_email') E-mail
                 .input_w
-                    input#question_popup_email.f_input_v1(placeholder='Введите Ваш e-mail')
+                    input#question_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email')
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='question_popup_ask') Вопрос
                 .input_w
-                    textarea#question_popup_ask.f_input_v1(placeholder='Введите вопрос')
+                    textarea#question_popup_ask.f_input_v1(placeholder='Введите вопрос' name='order_comments')
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Задать вопрос

@@ -143,7 +143,7 @@ function init_page_script() {
     $('body').delegate('.objectThumb', 'click', function () {
         var firedEl = $(this);
 
-        firedEl.closest('.object_unit').find('.objectMain img').attr('src', firedEl.find('img').attr('src'));
+        firedEl.closest('.object_unit').find('.objectMain img').attr('src', firedEl.find('img').attr('src').replace(/^(i\/villa\/)/, '$1b/'));
 
         return false;
     });

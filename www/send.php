@@ -1,6 +1,7 @@
 <?php
 
-$to = "<site@cyprogroup.club>";
+//$to = "<naverstay.me@gmail.com>";
+$to = "<info@cyprogroup.club>";
 
 $subject = $_POST['form_title']; //Загаловок сообщения
 

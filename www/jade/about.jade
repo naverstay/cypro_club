@@ -52,11 +52,11 @@ html(lang='ru')
                                     p Вы комфортно отдыхаете
                             
                             .text_center
-                                a.send_order.green_btn_2(href='#')
+                                a.send_order.green_btn_2.requestBtn(href='#')
                                     span.send_order_icon
                                         img(src='i/order_icon.png')
                                     p ОСТАВЬТЕ ЗАЯВКУ
-                                    div на бесплатную консультацию по выбору отдыха
+                                    div на бесплатную консультацию по бронированию
                                         
                     .partners_section.section
                         h2.partners_caption.section_caption.caption_bg
@@ -85,14 +85,38 @@ html(lang='ru')
                             .section_caption КЛИЕНТЫ О НАС
                             .reviewHolder.slider_holder.review_slider
                                 .reviewSlider
-                                    +loop_while(5)
+                                    +loop_while(1)
                                         .slide.review_unit
                                             .review_author_avatar
-                                                img(src='i/author_1.jpg')
+                                                img(src='i/review/svetlana_chornaya.jpg')
+                                                
+                                            p Вилла великолепная. Есть всё, чего душа желает. Развлечения тоже совсем рядом. И, конечно же, шикарный бассейн. В общем отдых незабываемый получился.
+                                            
+                                            .review_author_name Светлана Чорная
+                                            
+                                        .slide.review_unit
+                                            .review_author_avatar
+                                                img(src='i/review/artem_snitsar.jpg')
+
+                                            p Вилла очень понравилась. Дом и бассейн убирают регулярно и тщательно. Чистый пляж и невероятная терасса, которая выходит прямо к морю. На следующий год точно еще поедем туда.
+
+                                            .review_author_name Артем Сницар
+
+                                        .slide.review_unit
+                                            .review_author_avatar
+                                                img(src='i/review/liliya_sheina.jpg')
                                                 
                                             p Спасибо большое за прекрасный отдых. Удобное расположение и отличный вид. Квартира полностью удовлетворила наши ожидания, все было чисто и аккуратно. Для ребенка нам предоставили даже детский стульчик.
                                             
                                             .review_author_name Лилия Шеина
+                                            
+                                        .slide.review_unit
+                                            .review_author_avatar
+                                                img(src='i/review/dasha_petrenko.jpg')
+                                                
+                                            p Отдыхала с подружкой 2 недели. Здорово, что картинка полностью соответствовала реальности. Бассейн действительно был огромен!
+                                            
+                                            .review_author_name Даша Петренко
                                             
                                 .review_controls
                                     .slider_arrow.slider_prev.i-arrow_left
@@ -100,11 +124,15 @@ html(lang='ru')
                                         
                     +contacts_section()
                         
-            +weather()
+            //-+weather()
 
-            +exchange()
+            //-+exchange()
                         
         .overlay
 
         +popup()
-    +scripts()
+       
+    +nbl()
+
+    //-+script_js("['js/backstretch.js', 'vendor/fancyBox-master/dist/jquery.fancybox.min.js', 'js/slick.js']", "['js/script.m.js', 'js/index.m.js']")
+    

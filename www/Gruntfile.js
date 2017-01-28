@@ -17,18 +17,55 @@ module.exports = function (grunt) {
                 }
             }
         },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'styles/main_global.min.css': ['styles/main_global.css']
+                }
+            }
+        },
         uglify: {
             my_target: {
                 files: {
-                    'js/min/all.js': [
+                    'js/all.m.js': [
                         'js/jquery1.10.js',
                         'js/jquery-ui-1.11.4.js',
                         'js/jquery.validationEngine.js',
                         'js/jquery.validationEngine-ru.js',
+                        'js/backstretch.js',
+                        'js/slick.js',
+                        'vendor/fancyBox-master/dist/jquery.fancybox.min.js',
+                        'js/script.js'
+                    ],
+                    'js/index.m.js': [
+                        'js/index.js'
+                    ],
+                    'js/script.m.js': [
                         'js/script.js'
                     ]
                 }
             }
+
+            // my_target: {
+            //     files: {
+            //         'js/all.m.js': [
+            //             'js/jquery1.10.js',
+            //             'js/jquery-ui-1.11.4.js',
+            //             'js/jquery.validationEngine.js',
+            //             'js/jquery.validationEngine-ru.js'
+            //         ],
+            //         'js/index.m.js': [
+            //             'js/index.js'
+            //         ],
+            //         'js/script.m.js': [
+            //             'js/script.js'
+            //         ]
+            //     }
+            // }
         },
         sass: {
             dist: {

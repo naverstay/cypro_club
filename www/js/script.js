@@ -1,4 +1,4 @@
-var callback_popup, question_popup,
+var callback_popup, question_popup, request_popup,
     body, header, wnd, doc, bsTimer;
 
 $(function ($) {
@@ -8,6 +8,23 @@ $(function ($) {
     body = $('body');
 
     callback_popup = $('#callback_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'dialog_close_butt_mod_1 dialog_g_size_2 ',
+        appendTo: '.wrapper',
+        width: 450,
+        draggable: true,
+        open: function (event, ui) {
+
+        },
+        close: function (event, ui) {
+
+        }
+    });
+
+    request_popup = $('#request_popup').dialog({
         autoOpen: false,
         modal: true,
         closeOnEscape: true,
@@ -41,13 +58,19 @@ $(function ($) {
         }
     });
 
-    body.delegate('.callbackBtn', 'click', function () {
-        callback_popup.dialog('open');
-        return false;
-    }).delegate('.questionBtn', 'click', function () {
-        question_popup.dialog('open');
-        return false;
-    });
+    body
+        .delegate('.callbackBtn', 'click', function () {
+            callback_popup.dialog('open');
+            return false;
+        })
+        .delegate('.requestBtn', 'click', function () {
+            request_popup.dialog('open');
+            return false;
+        })
+        .delegate('.questionBtn', 'click', function () {
+            question_popup.dialog('open');
+            return false;
+        });
 
     $('.mobMenuBtn').on('click', function () {
         body.toggleClass('open_menu');
@@ -90,11 +113,56 @@ $(function ($) {
         });
     });
 
+    $('.thanxSlider')
+        .on('init', function (sld) {
+            setSlideBS($(sld.target).find('.slide'));
+        }).slick({
+        dots: false,
+        infinite: false,
+        arrows: false,
+        speed: 600,
+        zIndex: 1,
+        initialSlide: 0,
+        slide: '.slide',
+        // prevArrow: sld.closest('.reviewHolder').find('.slider_prev'),
+        // nextArrow: sld.closest('.reviewHolder').find('.slider_next'),
+        // appendDots: sld.closest('.reviewHolder').find('.slider_dots'),
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        touchThreshold: 10
+    });
+
     wnd.on('scroll', function () {
         header.toggleClass('header_small', doc.scrollTop() > 60);
     });
 
     setSlideBS($('.BSimg'));
+
+    $('.sendMailForm').on('submit', function (e) {
+        e.preventDefault();
+
+        var form = $(this);
+
+        if (form.validationEngine('validate')) {
+            var msg = form.serialize() + '&form_title=' + form.find('.form_title').text();
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: msg,
+                success: function (data) {
+                    window.location = "thanks.html"
+                },
+                error: function (xhr, str) {
+                    alert('Возникла ошибка: ' + xhr.responseCode);
+                }
+            });
+        }
+
+        return false;
+    });
 
     all_dialog_close();
 
@@ -133,6 +201,4 @@ $(window).on('resize', function () {
     bsTimer = setTimeout(function () {
         setSlideBS($('.backstretched'));
     }, 10);
-
-
 });

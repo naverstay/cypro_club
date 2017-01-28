@@ -1,0 +1,37 @@
+- var offers = ['Кипр','Мальдивы','Маврикий','Сейшелы','США','Япония','Перу','ОАЭ','Вьетнам','Мексика','острова Карибского бассейна', 'Украина'];
+
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Отдых на Кипре')
+    body.club
+        .wrapper
+            +header()
+
+            .base
+                div.main_content
+                    .main_slider_holder
+                        .main_slider.thanxSlider
+                            .slide
+                                img(src='i/slider/thank_you.jpg')
+
+                        .abs_holder: .gl_table: .gl_table_cell
+                            .section_inner
+                                .slide_hero.text_center
+                                    .clr_green СПАСИБО!
+                                    p Ваша заявка принята. Наш менеджер <br> свяжется с Вами в ближайшее время.
+                    
+                    +contacts_section()
+                        
+            //-+weather()
+
+            //-+exchange()
+
+        .overlay
+
+        +popup()
+       
+    +nbl()
+
+    //-+script_js("['js/backstretch.js', 'vendor/fancyBox-master/dist/jquery.fancybox.min.js', 'js/slick.js']", "['js/script.m.js', 'js/index.m.js']")
+    

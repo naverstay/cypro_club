@@ -1,4 +1,24 @@
-$(function ($) {
+function setSlideBS(slides) {
+    $(slides).each(function () {
+        var sctn = $(this);
+        sctn.addClass('backstretched').backstretch(sctn.find('img').attr('src'), {fade: 1500});
+    });
+}
+
+function init_page_script() {
+
+    var s = [
+        ['script1.js', 'plugin1.js',
+            function () {
+                plugin1_callback()
+            }
+        ],
+        function (e) {
+            script1_callback(e)
+        }, 'script2.js', function () {
+            script2_callback()
+        }
+    ];
 
     $('.mainSlider')
         .on('init', function (sld) {
@@ -128,27 +148,6 @@ $(function ($) {
         return false;
     });
 
-    $('.sendMailForm').on('submit', function () {
-        var form = $(this);
+}
 
-        var msg = form.serialize() + '&form_title=' + form.find('.form_title').text();
-
-        console.log(form.find('.form_title').text(), msg);
-        
-        $.ajax({
-            type: form.attr('method'),
-            url: form.attr('action'),
-            data: msg,
-            success: function (data) {
-                alert('Сообщение отправлено');
-                form.trigger('reset').closest('.ui-dialog').find('.ui-dialog-titlebar-close').click();
-            },
-            error: function (xhr, str) {
-                alert('Возникла ошибка: ' + xhr.responseCode);
-            }
-        });
-
-        return false;
-    });
-
-});
+init_page_script();

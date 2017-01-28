@@ -1,3 +1,4 @@
+$path : '../';
 $pi: 3.14159265359;
 $square_root_of_2: 1.41421356237;
 
@@ -8,7 +9,8 @@ $resp_step_4: 641px;
 
 $content-max-w: 1024px;
 
-$icomoon-font-path: "../fonts";
+//$icomoon-font-path: $path + $icomoon-font-path;  // for production remove ../ 
+
 $icomoon-font-name: 'cypro_icons';
 
 $OpenSans: 'Open Sans', sans-serif;

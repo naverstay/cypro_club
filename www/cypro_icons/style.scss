@@ -1,5 +1,9 @@
 @import "variables";
 
+@include production_check {
+  $path: '';
+}
+
 @font-face {
   font-family: 'cypro_icons';
   src:  url('#{$icomoon-font-path}/cypro_icons.eot?yvi0qy');

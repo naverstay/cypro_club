@@ -112,17 +112,17 @@
   left: 0;
   right: 0;
 
-  .backstretch {
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, .5);
-    }
-  }
+  //.backstretch {
+  //  &:before {
+  //    content: '';
+  //    position: absolute;
+  //    top: 0;
+  //    bottom: 0;
+  //    left: 0;
+  //    right: 0;
+  //    background: rgba(0, 0, 0, .5);
+  //  }
+  //}
 }
 
 .sub_caption_text {
@@ -156,7 +156,13 @@
 }
 
 .how_it_works {
-  background: url(../i/bg_how_it_works.jpg) no-repeat 50%;
+  @include production_check {
+    background: url('i/bg_how_it_works_2.jpg') no-repeat 50%;
+  }
+  @include develop_check {
+    background: url('../i/bg_how_it_works_2.jpg') no-repeat 50%;
+  }
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -202,7 +208,6 @@
       height: 32px;
       margin: -16px 0 0 -16px;
     }
-
   }
 
   @include respond-to-min($resp_step_3) {
@@ -343,7 +348,14 @@
 
 .review_section {
   position: relative;
-  background: url(../i/reviews_bg.jpg) no-repeat 50%;
+
+  @include production_check {
+    background: url('i/reviews_bg_2.jpg') no-repeat 50%;
+  }
+  @include develop_check {
+    background: url('../i/reviews_bg_2.jpg') no-repeat 50%;
+  }
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -360,7 +372,6 @@
     content: '';
     background: rgba(0, 0, 0, .75);
   }
-
 }
 
 .review_unit {

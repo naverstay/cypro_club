@@ -268,6 +268,14 @@
     font-size: 36px;
     line-height: 43px;
   }
+
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 400;
+    text-transform: none;
+  }
 }
 
 .slide_features {
@@ -357,7 +365,7 @@
 .slide_year {
   float: left;
   font-size: 60px;
-  min-width: 220px;
+  min-width: 200px;
   font-weight: 700;
   line-height: 1;
   margin-top: -7px;
@@ -474,7 +482,6 @@
   //text-align: center;
   border: 1px solid rgba(41, 159, 83, .35);
   padding-bottom: 10px;
-  //border-radius: 0 0 8px 8px;
 
   .object_img_loader {
     height: 207px;
@@ -521,7 +528,6 @@
 }
 
 .object_description_link {
-
 }
 
 .object_caption {
@@ -561,10 +567,6 @@
   .object_img {
     height: 82px;
     overflow: hidden;
-
-    img {
-      //margin: 0 -11px;
-    }
   }
 }
 
@@ -617,20 +619,25 @@
   background: #27ae60;
 
   ._daily {
-    color: #fff;
-    font-weight: bold;
-    line-height: 28px;
-    font-size: 20px;
-    letter-spacing: -.02em;
+    font-size: 12px;
+    line-height: 20px;
+    padding-top: 2px;
+    margin: 0 32px;
+    color: #a1e2bd;
+    border-bottom: 1px solid #a1e2bd;
+    text-decoration: line-through;
+
+    + ._weekly {
+      line-height: 28px;
+    }
   }
 
   ._weekly {
-    font-size: 12px;
-    line-height: 20px;
-    padding-bottom: 2px;
-    margin: 0 32px;
-    color: #a1e2bd;
-    border-top: 1px solid #a1e2bd;
+    color: #fff;
+    font-weight: bold;
+    line-height: 51px;
+    font-size: 20px;
+    letter-spacing: -.02em;
   }
 }
 

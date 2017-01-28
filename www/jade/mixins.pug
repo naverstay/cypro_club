@@ -1,3 +1,5 @@
+- var production = true;
+
 mixin dev_head(page_title)
     head
         title=page_title
@@ -8,10 +10,12 @@ mixin dev_head(page_title)
         meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
         meta(name="apple-mobile-web-app-capable", content="yes")
         meta(name="format-detection", content="telephone=no")
-        
-        //-style
-            include ../styles/main_global.css
-        link(rel='stylesheet', href='styles/main_global.css', media='all')
+        -if (production)
+            style
+                include ../styles/main_global.min.css
+        - else
+            link(rel='stylesheet', href='styles/main_global.css', media='all')
+            
         //-link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,cyrillic', rel='stylesheet', type='text/css')
         //-link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,cyrillic', rel='stylesheet', type='text/css')
         //-script(src='js/jquery1.10.js')
@@ -19,6 +23,11 @@ mixin dev_head(page_title)
         //-script(src='js/jquery.validationEngine.js')
         //-script(src='js/jquery.validationEngine-ru.js')
         //-script(src='js/script.js')
+
+        | <noscript>
+        | <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PJDT2L" height="0" width="0"
+        | style="display:none;visibility:hidden"></iframe>
+        | </noscript>
 
 mixin loop_while(counter)
     -i=0;
@@ -28,7 +37,7 @@ mixin loop_while(counter)
         
 mixin object_price()
     .object_price_w
-        a.object_price_btn.callbackBtn.green_btn_2(href='#') Заказать
+        a.object_price_btn.requestBtn.green_btn_2(href='#') Заказать
         .object_price
             block
 
@@ -59,7 +68,7 @@ mixin header()
                 li.nav_item
                     a.nav_link(href='about.html') Аренда
                 li.nav_item
-                    a.nav_link(href='about.html') Новый год
+                    a.nav_link(href='about.html') Раннее бронирование
                 li.nav_item
                     a.nav_link(href='about.html') Дополнительные услуги
                 //-li.nav_item
@@ -207,6 +216,26 @@ mixin popup()
                     label(for='callback_popup_phone') Телефон
                 .input_w
                     input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
+
+            .form_cell.f_cell_v1
+                button.btn_v2.green_btn.subscribe_btn Получить консультацию специалиста
+                
+    #request_popup.popup(style='display:none;')
+        form.validateMe.sendMailForm(action='send.php' method="POST")
+            .form_title.hide Запрос каталога
+            p Заполните заявку и получите <br> полный каталог вилл и апартаментов бесплатно
+            
+            .form_cell.f_cell_v1
+                .form_label
+                    label(for='callback_popup_name') Имя
+                .input_w
+                    input#callback_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]' name='order_name')
+                
+            .form_cell.f_cell_v1
+                .form_label
+                    label(for='callback_popup_phone') Телефон
+                .input_w
+                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
                 
             .form_cell.f_cell_v1
                 .form_label
@@ -216,6 +245,7 @@ mixin popup()
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Получить консультацию специалиста
+                
 
     #question_popup.popup(style='display:none;')
         form.validateMe.sendMailForm(action='send.php' method="POST")
@@ -249,46 +279,100 @@ mixin popup()
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Задать вопрос
 
+mixin script_js(js_dep, js_run)
+    link(href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,cyrillic', rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,cyrillic', rel='stylesheet')
+    link(rel='stylesheet', href='styles/styles.css', media='all')
+    link(rel='stylesheet', href='vendor/fancyBox-master/dist/jquery.fancybox.css', media='all')
+    script(src='js/script.min.js')
+    script.
+        $script("js/min/all.js", "all");
+        var js_dep = #{js_dep}, js_run = #{js_run}, dep_arr = [];
+
+        for (var i = 0; i < js_dep.length; i++) {
+            $script(js_dep[i], "js_" + i);
+            dep_arr.push("js_" + i);
+        }
+        
+        $script.ready("all", function () {
+            console.log('all');
+
+            $script.ready(dep_arr, function () {
+                console.log('dep_arr', dep_arr);
+
+                for (var i = 0; i < js_run.length; i++) {
+                    $script(js_run[i]);
+                    console.log(js_run[i]);
+                }
+
+            });
+        
+        });
+
+mixin nbl(custom_js)
+    link(href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,cyrillic', rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,cyrillic', rel='stylesheet')
+    
+    | <script src="js/nbl.plus.min.js" data-nbl="[['js/all.m.js', [#{custom_js} 'vendor/fancyBox-master/dist/jquery.fancybox.css']]]"></script>
+    
+    //-| <script src="js/nbl.plus.min.js" data-nbl="[['js/all.m.js', ['js/backstretch.js', ['vendor/fancyBox-master/dist/jquery.fancybox.min.js', ['js/slick.js', [#{custom_js}, 'vendor/fancyBox-master/dist/jquery.fancybox.css']]]]]]"></script>
+
+    
+
 mixin scripts(index)
     link(href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,cyrillic', rel='stylesheet')
     link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,cyrillic', rel='stylesheet')
     link(rel='stylesheet', href='styles/styles.css', media='all')
     link(rel='stylesheet', href='vendor/fancyBox-master/dist/jquery.fancybox.css', media='all')
-    //script(src='js/min/all.js')
+    script(src='js/min/all.js')
 
-    script(src='js/jquery1.10.js')
-    script(src='js/jquery-ui-1.11.4.js')
-    script(src='js/jquery.validationEngine.js')
-    script(src='js/jquery.validationEngine-ru.js')
-    script(src='js/backstretch.js')
-    script(src='js/slick.js')
-    script(src='vendor/fancyBox-master/dist/jquery.fancybox.min.js')
-    script(src='js/script.js')
-    | <script type="text/javascript">(function () {
-    |     var widget_id = 'PBVelrMZV4';
-    |     var d = document;
-    |     var w = window;
+    //-script(src='js/jquery1.10.js')
+    //-script(src='js/jquery-ui-1.11.4.js')
+    //-script(src='js/jquery.validationEngine.js')
+    //-script(src='js/jquery.validationEngine-ru.js')
+    //-script(src='js/backstretch.js')
+    //-script(src='js/slick.js')
+    //-script(src='vendor/fancyBox-master/dist/jquery.fancybox.min.js')
+    //-script(src='js/script.js')
+    
+    script.
+        (function () {
+            var widget_id = 'PBVelrMZV4';
+            var d = document;
+            var w = window;
+
+            function l() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = '//code.jivosite.com/script/widget/' + widget_id;
+                var ss = document.getElementsByTagName('script')[0];
+                ss.parentNode.insertBefore(s, ss);
+            }
+
+            if (d.readyState == 'complete') {
+                l();
+            } else {
+                if (w.attachEvent) {
+                    w.attachEvent('onload', l);
+                } else {
+                    w.addEventListener('load', l, false);
+                }
+            }
+        })();
     | 
-    |     function l() {
-    |         var s = document.createElement('script');
-    |         s.type = 'text/javascript';
-    |         s.async = true;
-    |         s.src = '//code.jivosite.com/script/widget/' + widget_id;
-    |         var ss = document.getElementsByTagName('script')[0];
-    |         ss.parentNode.insertBefore(s, ss);
-    |     }
-    | 
-    |     if (d.readyState == 'complete') {
-    |         l();
-    |     } else {
-    |         if (w.attachEvent) {
-    |             w.attachEvent('onload', l);
-    |         } else {
-    |             w.addEventListener('load', l, false);
-    |         }
-    |     }
-    | })();</script>
+    
+    script.
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PJDT2L');
+    
     
     - if (index)
-        script(src='js/index.js')
+        script(src='js/index.min.js')
         

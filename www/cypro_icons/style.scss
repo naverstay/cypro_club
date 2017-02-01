@@ -1,18 +1,29 @@
 @import "variables";
 
 @include production_check {
-  $path: '';
-}
-
-@font-face {
-  font-family: 'cypro_icons';
-  src:  url('#{$icomoon-font-path}/cypro_icons.eot?yvi0qy');
-  src:  url('#{$icomoon-font-path}/cypro_icons.eot?yvi0qy#iefix') format('embedded-opentype'),
+  @font-face {
+    font-family: 'cypro_icons';
+    src: url('#{$icomoon-font-path}/cypro_icons.eot?yvi0qy');
+    src: url('#{$icomoon-font-path}/cypro_icons.eot?yvi0qy#iefix') format('embedded-opentype'),
     url('#{$icomoon-font-path}/cypro_icons.ttf?yvi0qy') format('truetype'),
     url('#{$icomoon-font-path}/cypro_icons.woff?yvi0qy') format('woff'),
     url('#{$icomoon-font-path}/cypro_icons.svg?yvi0qy#cypro_icons') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include develop_check {
+  @font-face {
+    font-family: 'cypro_icons';
+    src: url('../#{$icomoon-font-path}/cypro_icons.eot?yvi0qy');
+    src: url('../#{$icomoon-font-path}/cypro_icons.eot?yvi0qy#iefix') format('embedded-opentype'),
+    url('../#{$icomoon-font-path}/cypro_icons.ttf?yvi0qy') format('truetype'),
+    url('../#{$icomoon-font-path}/cypro_icons.woff?yvi0qy') format('woff'),
+    url('../#{$icomoon-font-path}/cypro_icons.svg?yvi0qy#cypro_icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 [class^="i-"], [class*=" i-"] {

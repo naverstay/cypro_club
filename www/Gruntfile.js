@@ -15,6 +15,13 @@ module.exports = function (grunt) {
                 options: {
                     spawn: false
                 }
+            },
+            scripts: {
+                files: ['js/*.js'],
+                tasks: ['uglify'],
+                options: {
+                    spawn: false
+                }
             }
         },
         cssmin: {

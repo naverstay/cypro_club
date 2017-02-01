@@ -37,10 +37,53 @@
   &.caption_btn {
     display: block;
     text-decoration: none;
-    border-radius: 2px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 25px;
+    text-transform: uppercase;
+    font-weight: 400;
+    min-width: 200px;
+  }
+}
+
+.btn_v4 {
+  height: 60px;
+
+  &.hero_btn {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 18px 47px;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include respond-to-min($resp_step_3) {
+      float: left;
+    }
+  }
+}
+
+.btn_v5 {
+  height: 40px;
+
+  &.contact_btn {
+    padding: 10px 55px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &.factoid_btn {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 55px;
+    font-size: 15px;
+    line-height: 20px;
   }
 }
 

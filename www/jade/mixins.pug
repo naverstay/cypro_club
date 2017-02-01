@@ -41,7 +41,7 @@ mixin object_price()
         .object_price
             block
 
-mixin header()
+mixin header(index, about)
     div.header
         a.mob_menu.mobMenuBtn.i-menu(href='#')
         .section_inner.clearfix
@@ -64,18 +64,47 @@ mixin header()
                         
             ul.nav_menu
                 li.nav_item
-                    a.nav_link(href='about.html') О нас
+                    a.nav_link(href= about ? '#' : 'about.html') О нас
                 li.nav_item
-                    a.nav_link(href='about.html') Аренда
+                    a.nav_link.scrollTo(href= (index ? '' : 'index.html') + '#rent_section') Аренда
                 li.nav_item
-                    a.nav_link(href='about.html') Раннее бронирование
+                    a.nav_link.scrollTo(href= (index ? '' : 'index.html') + '#booking_section') Раннее бронирование
                 li.nav_item
-                    a.nav_link(href='about.html') Дополнительные услуги
+                    a.nav_link.scrollTo(href= (index ? '' : 'index.html') + '#services_section') Дополнительные услуги
                 //-li.nav_item
                     a.nav_link(href='about.html') Продажа
                 li.nav_item
                     a.nav_link(href='about.html#contacts') Контакты
                     
+mixin new_footer()
+    #contacts.section.footer_v2
+        .section_inner.clearfix
+            .footer_contact_info
+                a.contact_block_logo(href='index.html')
+                    img(src='i/logo.png')
+                    span Традиции и  <br> надежность
+
+                ul.contact_share_block
+                    li: a.sh_link.i-facebook(href='#')
+                    li: a.sh_link.i-instagram(href='#')
+
+                .contact_block_questions: .contact_block_q_center
+                    .contact_block_text
+                        .contact_block_caption ОСТАЛИСЬ ВОПРОСЫ?
+                        p Задайте их нашему менеджеру!
+
+                    a.btn_v5.contact_btn.green_btn_2.questionBtn(href='#') Задать вопрос
+
+            .footer_contacts
+                .contact_block_caption.text_upper Наши контакты
+
+                ul.footer_contact_phones
+                    li._phone +38 (097) 17 11 844
+                    li +38 (050) 62 21 981
+
+                    li._email
+                        a(href='mailto:info@cyprogroup.club') info@cyprogroup.club
+                        
 mixin contacts_section(small)
     #contacts.contacts_section.section(class = small ? '_simple' : '')
         - if (!small)

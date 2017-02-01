@@ -77,6 +77,11 @@ $(function ($) {
         return false;
     });
 
+    $('.scrollTo').on('click', function () {
+        docScrollTo($($(this).attr('href')).offset().top - $('.header').outerHeight(), 600);
+        return false;
+    });
+
     $('.validateMe').validationEngine({
         scroll: false,
         showPrompts: false,
@@ -167,6 +172,15 @@ $(function ($) {
     all_dialog_close();
 
 });
+
+function docScrollTo(pos, speed, callback) {
+
+    $('html,body').animate({'scrollTop': pos}, speed, function () {
+        if (typeof(callback) == 'function') {
+            callback();
+        }
+    });
+}
 
 function setSlideBS(slides) {
     $(slides).each(function () {

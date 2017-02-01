@@ -56,6 +56,11 @@
 
 }
 
+.contact_block_q_center {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 .weather_holder {
   margin-bottom: 20px;
 
@@ -69,6 +74,164 @@
     top: 50%;
     left: 0;
     z-index: 30;
+  }
+}
+
+.footer_contacts {
+  padding: 40px 0 20px;
+  text-align: center;
+
+  .contact_phones dd {
+    min-width: 60%;
+    float: left;
+  }
+
+  .contact_phones dt {
+    width: auto;
+    padding-right: 18px;
+    clear: both;
+
+    &:before {
+      color: #3c3c3c;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    max-width: 30%;
+    float: right;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.footer_contact_info {
+
+  .contact_block_questions {
+
+    @include respond-to-max($resp_step_3) {
+      clear: both;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    float: left;
+    width: 60%;
+
+    .contact_block_questions {
+      float: right;
+      margin-top: 0;
+      text-align: left;
+    }
+  }
+}
+
+.footer_v2 {
+  background: #e8e8e8;
+  padding: 20px 0 60px;
+
+  .contact_block_questions p {
+    //font-size: 14px;
+  }
+
+  .contact_phones dd {
+    //font-size: 14px;
+  }
+
+  .sh_link:before,
+  .contact_block_questions p,
+  .contact_block_caption,
+  .contact_block_logo span,
+  .contact_phones dt,
+  .contact_phones dd {
+    color: #3c3c3c;
+  }
+
+  .contact_block_caption {
+    margin-bottom: 15px;
+    font: 16px 'MyriadProBold', sans-serif;
+  }
+
+  .contact_share_block {
+    float: right;
+    margin-right: -10px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 25px;
+
+    @include respond-to-min($resp_step_2) {
+      //min-width: 25%;
+      float: left;
+      margin-right: 0;
+    }
+  }
+
+  .contact_block_logo {
+    float: left;
+    margin-right: 20px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding-bottom: 20px;
+  }
+}
+
+.footer_contact_phones {
+  text-align: center;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px 10px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3c3c3c;
+
+    &:before { /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: $icomoon-font-name !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 16px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      color: #3c3c3c;
+      margin-top: -10px;
+    }
+
+    &._phone:before {
+      content: $i-phone;
+    }
+
+    &._email:before {
+      content: $i-envelope;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    text-align: left;
+
+    li {
+      display: block;
+      margin: 0 0 3px;
+    }
   }
 }
 

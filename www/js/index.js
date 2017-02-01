@@ -62,6 +62,29 @@ function init_page_script() {
         touchThreshold: 10
     });
 
+    $('.factoidSlider').each(function (ind) {
+        
+        $(this).on('init', function (sld) {
+            setSlideBS($(sld.target).closest('.factoidSection').find('.factoidImg'));
+        }).slick({
+            dots: true,
+            infinite: false,
+            arrows: false,
+            speed: 600,
+            zIndex: 1,
+            initialSlide: 0,
+            slide: '.slide',
+            // prevArrow: sld.closest('.reviewHolder').find('.slider_prev'),
+            // nextArrow: sld.closest('.reviewHolder').find('.slider_next'),
+            // appendDots: sld.closest('.reviewHolder').find('.slider_dots'),
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // autoplay: true,
+            autoplaySpeed: 2000,
+            touchThreshold: 10
+        });
+    });
+
     $('.objectSlider').each(function (ind) {
         $(this).slick({
             dots: false,

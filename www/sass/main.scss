@@ -8,9 +8,9 @@ html {
 }
 
 body {
-  font: 14px/1.2 $OpenSans;
+  font: 14px/1.2 $MyriadProRegular;
   color: $default_t_color;
-  
+
   &.ov_vis {
     overflow: visible !important;
   }
@@ -91,6 +91,77 @@ b {
     padding: 30px 20px;
   }
 
+}
+
+.hero_unit {
+  @include respond-to-min($resp_step_3) {
+    margin-top: 30%;
+  }
+}
+
+.hero_controls {
+  @extend %clearfix;
+  margin-top: -7px;
+}
+
+.hero_slogan {
+  font-size: 108px;
+  line-height: 1;
+  color: #fff;
+}
+
+.hero_sub_title {
+  position: relative;
+  color: #fff;
+  padding: 8px 10px 3px 0;
+  font-size: 22px;
+  min-width: 83%;
+  display: inline-block;
+  vertical-align: top;
+
+  &:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: -5000px;
+    background: rgba(0, 0, 0, .4);
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+}
+
+.hero_title_holder {
+  @include respond-to-min($resp_step_3) {
+    float: left;
+    width: 5/8 * 100%;
+  }
+}
+
+.hero_btn_holder {
+  @include respond-to-min($resp_step_3) {
+    float: right;
+    width: 3/8 * 100%;
+  }
+}
+
+.hero_tip {
+  position: relative;
+  border-top: 2px solid $gl_green;
+
+  p {
+    margin-top: -2px;
+    background: #e8e8e8;
+    color: #3c3c3c;
+    float: right;
+    font-size: 13px;
+    padding: 3px 55px;
+  }
 }
 
 .base {

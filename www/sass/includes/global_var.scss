@@ -14,6 +14,7 @@ $content-max-w: 1024px;
 $icomoon-font-name: 'cypro_icons';
 
 $OpenSans: 'Open Sans', sans-serif;
+$MyriadProRegular: 'MyriadProRegular', sans-serif;
 $SourceSansPro: 'Source Sans Pro', sans-serif;
 
 $PTSerif: 'PT Serif', serif;
@@ -34,6 +35,7 @@ $cross_font_TrebuchetMS: 'Trebuchet MS', 'Helvetica CY', sans-serif;
 $cross_font_Verdana: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif;
 
 $default_t_color: #7f7f7f;
+$gl_green: #27ae60;
 $placeholder_color: #ccc;
 
 @mixin opacity($val : 1, $important : 0) {

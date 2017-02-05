@@ -169,6 +169,10 @@ $(function ($) {
         return false;
     });
 
+    $("input").filter(function (i, el) {
+        return $(el).attr('data-inputmask') != void 0;
+    }).inputmask();
+
     all_dialog_close();
 
 });

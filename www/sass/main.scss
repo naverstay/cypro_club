@@ -144,7 +144,10 @@ b {
 }
 
 .hero_btn_holder {
+  clear: both;
+
   @include respond-to-min($resp_step_3) {
+    clear: none;
     float: right;
     width: 3/8 * 100%;
   }
@@ -155,12 +158,16 @@ b {
   border-top: 2px solid $gl_green;
 
   p {
-    margin-top: -2px;
+    margin: -2px 0 15px;
     background: #e8e8e8;
     color: #3c3c3c;
     float: right;
     font-size: 13px;
-    padding: 3px 55px;
+    padding: 3px 10px;
+    
+    @include respond-to-min($resp_step_3) {
+      padding: 3px 55px;
+    }
   }
 }
 

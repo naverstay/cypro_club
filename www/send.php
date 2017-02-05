@@ -10,6 +10,7 @@ $message = '<html>
                     <title>' . $subject . '</title>
                 </head>
                 <body>
+                    <p>Время: ' . date("H:i:s") . ' ' . date("d F Y") . '</p>
                     <p>Имя: ' . $_POST['order_name'] . '</p>
                     <p>Телефон: ' . $_POST['order_phone'] . '</p> 
                     <p>Эл.почта: ' . $_POST['order_email'] . '</p> 

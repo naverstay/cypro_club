@@ -1,6 +1,7 @@
 - var production = true;
+//- production = false;
 
-mixin dev_head(page_title)
+mixin dev_head(page_title, index)
     head
         title=page_title
         | 
@@ -13,6 +14,11 @@ mixin dev_head(page_title)
         -if (production)
             style
                 include ../styles/main_global.min.css
+
+            - if (index)
+                include ../library/phpQuery-onefile.php
+                | ?>
+
         - else
             link(rel='stylesheet', href='styles/main_global.css', media='all')
             
@@ -28,6 +34,7 @@ mixin dev_head(page_title)
         | <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PJDT2L" height="0" width="0"
         | style="display:none;visibility:hidden"></iframe>
         | </noscript>
+        
 
 mixin loop_while(counter)
     -i=0;
@@ -46,7 +53,7 @@ mixin header(index, about)
         a.mob_menu.mobMenuBtn.i-menu(href='#')
         .section_inner.clearfix
             .logo_block
-                a.logo(href='index.html')
+                a.logo(href='/')
                     img(src='i/logo.png')
                     span Традиции и  <br>  надежность
 
@@ -66,11 +73,11 @@ mixin header(index, about)
                 li.nav_item
                     a.nav_link(href= about ? '#' : 'about.html') О нас
                 li.nav_item
-                    a.nav_link.scrollTo(href= (index ? '' : 'index.html') + '#rent_section') Аренда
+                    a.nav_link.scrollTo(href= (index ? '' : '/') + '#rent_section') Аренда
                 li.nav_item
-                    a.nav_link.scrollTo(href= (index ? '' : 'index.html') + '#booking_section') Раннее бронирование
+                    a.nav_link.scrollTo(href= (index ? '' : '/') + '#booking_section') Раннее бронирование
                 li.nav_item
-                    a.nav_link.scrollTo(href= (index ? '' : 'index.html') + '#services_section') Дополнительные услуги
+                    a.nav_link.scrollTo(href= (index ? '' : '/') + '#services_section') Дополнительные услуги
                 //-li.nav_item
                     a.nav_link(href='about.html') Продажа
                 li.nav_item
@@ -80,7 +87,7 @@ mixin new_footer()
     #contacts.section.footer_v2
         .section_inner.clearfix
             .footer_contact_info
-                a.contact_block_logo(href='index.html')
+                a.contact_block_logo(href='/')
                     img(src='i/logo.png')
                     span Традиции и  <br> надежность
 
@@ -114,7 +121,7 @@ mixin contacts_section(small)
         .section_inner
             .contact_block
                 .contact_info
-                    a.contact_block_logo(href='index.html')
+                    a.contact_block_logo(href='/')
                         img(src='i/logo.png')
                         span Традиции и  <br>  надежность
 
@@ -244,7 +251,7 @@ mixin popup()
                 .form_label
                     label(for='callback_popup_phone') Телефон
                 .input_w
-                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
+                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone' data-inputmask="'mask': '[+38] (999)-999-99-99', 'clearIncomplete': true")
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Получить консультацию специалиста
@@ -264,13 +271,13 @@ mixin popup()
                 .form_label
                     label(for='callback_popup_phone') Телефон
                 .input_w
-                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
+                    input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone' data-inputmask="'mask': '[+38] (999)-999-99-99', 'clearIncomplete': true")
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='callback_popup_email') E-mail
                 .input_w
-                    input#callback_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email')
+                    input#callback_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email' class='validate[required,custom[email]]' data-inputmask="'alias': 'email'")
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Получить консультацию специалиста
@@ -291,13 +298,13 @@ mixin popup()
                 .form_label
                     label(for='question_popup_phone') Телефон
                 .input_w
-                    input#question_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone')
+                    input#question_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone' data-inputmask="'mask': '[+38] (999)-999-99-99', 'clearIncomplete': true")
                 
             .form_cell.f_cell_v1
                 .form_label
                     label(for='question_popup_email') E-mail
                 .input_w
-                    input#question_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email')
+                    input#question_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email' class='validate[required,custom[email]]' data-inputmask="'alias': 'email'")
                 
             .form_cell.f_cell_v1
                 .form_label
@@ -307,6 +314,15 @@ mixin popup()
 
             .form_cell.f_cell_v1
                 button.btn_v2.green_btn.subscribe_btn Задать вопрос
+
+mixin get_temp()
+    span
+        | <?php
+        | $res = file_get_contents('https://pogoda.turtella.ru/Cyprus/Larnaca/sea_temperature/index.php');
+        | $document = phpQuery::newDocument($res);
+        | $hentry = $document->find('#monthWeather .seaTemp')->text();
+        | echo $hentry;
+        | ?>
 
 mixin script_js(js_dep, js_run)
     link(href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,cyrillic', rel='stylesheet')

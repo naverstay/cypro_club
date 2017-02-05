@@ -56,10 +56,7 @@
     padding: 18px 47px;
     font-size: 18px;
     line-height: 24px;
-
-    @include respond-to-min($resp_step_3) {
-      float: left;
-    }
+    float: left;
   }
 }
 

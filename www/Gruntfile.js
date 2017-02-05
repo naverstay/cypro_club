@@ -45,6 +45,7 @@ module.exports = function (grunt) {
                         'js/jquery.validationEngine-ru.js',
                         'js/backstretch.js',
                         'js/slick.js',
+                        'js/jquery.inputmask.bundle.js',
                         'vendor/fancyBox-master/dist/jquery.fancybox.min.js',
                         'js/script.js'
                     ],

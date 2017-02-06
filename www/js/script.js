@@ -17,7 +17,7 @@ $(function ($) {
             $('.curTemp').text(response);
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            $('.curTemp').text('Уточните температуру у провайдера погоды');
+            $('.curTemp').text('Ошибка провайдера погоды');
         }
     });
 

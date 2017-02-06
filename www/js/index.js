@@ -168,9 +168,7 @@ function init_page_script() {
             unit = firedEl.closest('.object_unit'),
             url = firedEl.find('img').attr('src').replace(/(\.[a-zA-Z]+)$/, 'b$1');
 
-        unit.find('.object_img_loader .objectMain').attr('href', url).find('img').attr('src', url);
-
-        unit.find('.hide .objectMain[href="' + url + '"]')
+        unit.find('.object_img_loader .objectMain[href="' + url + '"]').addClass('current').siblings().removeClass('current');
         
         return false;
     });

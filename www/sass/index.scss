@@ -667,7 +667,12 @@
 }
 
 .object_img {
-  display: block;
+  display: none;
+
+  .object_gallery &,
+  &.current {
+    display: block;
+  }
 
   img {
     display: block;

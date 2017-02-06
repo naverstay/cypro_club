@@ -63,7 +63,7 @@ function init_page_script() {
     });
 
     $('.factoidSlider').each(function (ind) {
-
+        
         $(this).on('init', function (sld) {
             setSlideBS($(sld.target).closest('.factoidSection').find('.factoidImg'));
         }).slick({
@@ -164,12 +164,14 @@ function init_page_script() {
     setSlideBS($('.slick-initialized .BSimg'));
 
     $('body').delegate('.objectThumb', 'click', function () {
-        var firedEl = $(this),
+        var firedEl = $(this), 
             unit = firedEl.closest('.object_unit'),
             url = firedEl.find('img').attr('src').replace(/(\.[a-zA-Z]+)$/, 'b$1');
 
         unit.find('.object_img_loader .objectMain').attr('href', url).find('img').attr('src', url);
 
+        unit.find('.hide .objectMain[href="' + url + '"]')
+        
         return false;
     });
 

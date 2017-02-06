@@ -11,47 +11,73 @@ html(lang='ru')
             .base
                 div.main_content
                     .how_it_works.section
-                        h2.how_it_works_caption.section_caption.caption_bg
+                        h2.how_it_works_caption.section_caption.caption_v2
                             span.section_inner КАК МЫ РАБОТАЕМ
                         
-                        .section_inner
-                            ul.how_it_works_steps
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                        .section_inner: .work_steps_holder
+                            ul.work_steps
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_1.png')
                                     p Вы оставляете заявку или звоните
                             
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_2.png')
                                     p Мы вместе выбираем лучший вариант
                             
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_3.png')
                                     p Заключаем с вами договор
                             
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_4.png')
                                     p Мы помогаем вам выбрать билет и оформить визу
                             
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_5.png')
-                                    p В назначенное время встречаем вас в аэропорту Ларнака
+                                    p В назначенное время встречаем вас в аэропорту
                             
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_6.png')
                                     p Мы отправляемся на место проживания
                             
-                                li.how_it_works_step
-                                    span.how_it_works_icon
+                                li.work_step
+                                    span.step_icon
                                         img(src='i/step_7.png')
                                     p Вы комфортно отдыхаете
                             
-                            .text_center
+                            .work_steps_form_col
+                                form.validateMe.sendMailForm(action='send.php' method="POST")
+                                    .work_steps_form
+                                        .form_title.hide Запрос каталога
+                                        
+                                        .form_cell.f_cell_v1
+                                            .form_label
+                                                label(for='callback_popup_name') Ваше Имя
+                                            .input_w
+                                                input#callback_popup_name.f_input_v1(placeholder='Введите Ваше имя' class='validate[required]' name='order_name')
+                                            
+                                        .form_cell.f_cell_v1
+                                            .form_label
+                                                label(for='callback_popup_phone') Ваш Телефон
+                                            .input_w
+                                                input#callback_popup_phone.f_input_v1(placeholder='Введите Ваш телефон' class='validate[required]' name='order_phone' data-inputmask="'mask': '[+38] (999)-999-99-99', 'clearIncomplete': true")
+                                            
+                                        .form_cell.f_cell_v1
+                                            .form_label
+                                                label(for='callback_popup_email') Ваша почта
+                                            .input_w
+                                                input#callback_popup_email.f_input_v1(placeholder='Введите Ваш e-mail' name='order_email' class='validate[required,custom[email]]' data-inputmask="'alias': 'email'")
+                        
+                                    .form_cell.f_cell_v1
+                                        button.btn_v2.green_btn.subscribe_btn Оставить заявку
+                                
+                            //-.text_center
                                 a.send_order.green_btn_2.requestBtn(href='#')
                                     span.send_order_icon
                                         img(src='i/order_icon.png')
@@ -59,10 +85,10 @@ html(lang='ru')
                                     div на бесплатную консультацию по бронированию
                                         
                     .partners_section.section
-                        h2.partners_caption.section_caption.caption_bg
-                            span.section_inner Наши партнеры
-                            
                         .section_inner
+                            h2.section_caption-v2
+                                span.clr_green Наши партнеры
+                                
                             ul.partners_list
                                 li
                                     .partner_unit
@@ -82,7 +108,8 @@ html(lang='ru')
                                         
                     .review_section.section
                         .section_inner
-                            .section_caption КЛИЕНТЫ О НАС
+                            .section_caption-v2
+                                span.clr_white КЛИЕНТЫ О НАС
                             .reviewHolder.slider_holder.review_slider
                                 .reviewSlider
                                     +loop_while(1)
@@ -122,12 +149,14 @@ html(lang='ru')
                                     .slider_arrow.slider_prev.i-arrow_left
                                     .slider_arrow.slider_next.i-arrow_right
                                         
-                    +contacts_section()
+                    //-+contacts_section()
                         
+                    +new_footer()
+
             //-+weather()
 
             //-+exchange()
-                        
+
         .overlay
 
         +popup()
@@ -136,3 +165,4 @@ html(lang='ru')
 
     //-+script_js("['js/backstretch.js', 'vendor/fancyBox-master/dist/jquery.fancybox.min.js', 'js/slick.js']", "['js/script.m.js', 'js/index.m.js']")
     
+        

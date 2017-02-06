@@ -20,6 +20,13 @@
     }
   }
 
+  &_caption-v2 {
+    padding: 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
   &_caption {
     @extend %clearfix;
     padding: 15px;
@@ -30,6 +37,15 @@
     color: #fff;
     letter-spacing: -.3px;
     text-transform: uppercase;
+
+    @include respond-to-min($resp_step_2) {
+      &.caption_v2 {
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 0;
+        padding-bottom: 16px;
+      }
+    }
 
     .caption_text {
       margin-bottom: 20px;
@@ -170,7 +186,11 @@
   min-height: 100vh;
 
   &:first-child {
-    padding-top: 130px;
+    padding-top: 160px;
+
+    @include respond-to-min($resp_step_2) {
+      padding-top: 105px;
+    }
   }
 
   &_steps {
@@ -210,7 +230,111 @@
     }
   }
 
+  .work_steps_holder {
+    @extend %clearfix;
+    max-width: 790px;
+    margin: 0 auto;
+  }
+
+  .work_steps {
+
+    @include respond-to-min($resp_step_3) {
+      float: left;
+      width: 72.5%;
+    }
+  }
+
+  .work_step {
+    padding: 11px 10px 11px 80px;
+    position: relative;
+    background: rgba(255, 255, 255, .8);
+    color: #3c3c3c;
+    font-size: 16px;
+    margin-bottom: 14px;
+
+    @include respond-to-min($resp_step_2) {
+      padding: 11px 20px 11px 180px;
+    }
+  }
+
+  .step_icon {
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    left: 0;
+    width: 60px;
+    background: $gl_green;
+    text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 100%;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-left: 10px solid $gl_green;
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 100%;
+      line-height: 1;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      width: 104px;
+    }
+
+  }
+
+  .work_steps_form_col {
+    padding-bottom: 25px;
+
+    .btn_v2.subscribe_btn {
+      margin-top: 14px;
+      height: 41px;
+      text-transform: uppercase;
+    }
+
+    @include respond-to-min($resp_step_3) {
+      float: right;
+      width: 27.5%;
+      padding-left: 14px;
+    }
+  }
+
+  .work_steps_form {
+    padding: 18px 10px;
+    margin-top: 55px;
+    background: rgba(255, 255, 255, .8);
+
+    .form_label {
+      margin-bottom: 1px;
+    }
+
+    @include respond-to-min($resp_step_3) {
+
+      .f_input_v1 {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        height: 28px;
+      }
+
+      .form_cell.f_cell_v1 {
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
   @include respond-to-min($resp_step_3) {
+
     .how_it_works_step {
       width: 50%;
       clear: both;
@@ -317,7 +441,7 @@
 .partners_list {
   @extend %clearfix;
   margin-left: -20px;
-  padding-bottom: 40px;
+  padding-bottom: 5px;
   text-align: center;
 
   li {
@@ -329,9 +453,7 @@
 
   @include respond-to-min($resp_step_2) {
     li {
-      float: left;
-      margin: 50px 0;
-      width: 20%;
+      margin: 5px 22px 15px;
     }
   }
 
@@ -343,6 +465,7 @@
   img {
     display: inline-block;
     vertical-align: top;
+    max-width: 100px;
   }
 }
 
@@ -360,7 +483,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 280px;
+  min-height: 210px;
   padding-bottom: 25px;
 
   &:before {
@@ -380,8 +503,8 @@
   text-align: center;
 
   p {
-    margin-top: 20px;
-    font-size: 16px;
+    margin-top: 13px;
+    font-size: 13px;
   }
 
   @include respond-to-min($resp_step_4) {
@@ -399,11 +522,14 @@
 
   img {
     display: block;
+    max-width: 100%;
   }
 
   @include respond-to-min($resp_step_4) {
+    width: 100px;
+    height: 100px;
     float: left;
-    margin-right: 25px;
+    margin-right: 15px;
   }
 }
 
@@ -418,9 +544,16 @@
 
 .review_slider {
   padding: 0 50px;
+  margin: 0 auto;
+  max-width: 780px;
+
+  .slick-slider {
+    max-width: 540px;
+    margin: 0 auto;
+  }
 
   @include respond-to-min($resp_step_2) {
-    padding: 0 155px;
+
   }
 }
 
@@ -448,7 +581,6 @@
   .slider_next {
     right: 0;
   }
-
 }
 
 .slick-list {
@@ -615,7 +747,7 @@
       line-height: 70px;
     }
   }
-  
+
   ._simple & {
     .sh_link {
       width: 40px;

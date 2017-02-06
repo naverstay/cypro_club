@@ -15,7 +15,7 @@ mixin dev_head(page_title, index)
             style
                 include ../styles/main_global.min.css
 
-            - if (index)
+            //- if (index)
                 include ../library/phpQuery-onefile.php
                 | ?>
 
@@ -34,7 +34,6 @@ mixin dev_head(page_title, index)
         | <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PJDT2L" height="0" width="0"
         | style="display:none;visibility:hidden"></iframe>
         | </noscript>
-        
 
 mixin loop_while(counter)
     -i=0;
@@ -114,7 +113,7 @@ mixin new_footer()
                         
 mixin contacts_section(small)
     #contacts.contacts_section.section(class = small ? '_simple' : '')
-        - if (!small)
+        //- if (!small)
             h2.section_caption.caption_bg
                 span.section_inner КОНТАКТЫ
 
@@ -316,7 +315,9 @@ mixin popup()
                 button.btn_v2.green_btn.subscribe_btn Задать вопрос
 
 mixin get_temp()
-    span
+    span.curTemp
+    
+    //-span
         | <?php
         | $res = file_get_contents('https://pogoda.turtella.ru/Cyprus/Larnaca/sea_temperature/index.php');
         | $document = phpQuery::newDocument($res);

@@ -7,6 +7,20 @@ $(function ($) {
     wnd = $(window);
     body = $('body');
 
+    $.ajax({
+        url: "get_temp.php",
+        type: 'POST',
+        data: {
+            'city': 'Larnaca'
+        },
+        success: function (response) {
+            $('.curTemp').text(response);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            $('.curTemp').text('Уточните температуру у провайдера погоды');
+        }
+    });
+
     callback_popup = $('#callback_popup').dialog({
         autoOpen: false,
         modal: true,

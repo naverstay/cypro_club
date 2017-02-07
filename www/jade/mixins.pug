@@ -11,7 +11,7 @@ mixin dev_head(page_title, index)
         meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
         meta(name="apple-mobile-web-app-capable", content="yes")
         meta(name="format-detection", content="telephone=no")
-        -if (production)
+        - if (production)
             style
                 include ../styles/main_global.min.css
 
@@ -110,6 +110,11 @@ mixin new_footer()
 
                     li._email
                         a(href='mailto:info@cyprogroup.club') info@cyprogroup.club
+                        
+mixin object_img(src, name, img, cls)
+    a.object_img.objectMain.current(href=src data-fancybox=name class=cls)
+        - if (img)
+            img(src=src)
                         
 mixin contacts_section(small)
     #contacts.contacts_section.section(class = small ? '_simple' : '')

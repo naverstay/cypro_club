@@ -66,28 +66,27 @@ html(lang='ru')
                                 .slide 
                                     .object_unit
                                         .object_img_loader
-                                            a.object_img.objectMain.current(href='i/villa/villa_888-1b.jpg' data-fancybox="qw-villa_888" data-qw-form="qw-form-villa_888")
-                                                img(src='i/villa/villa_888-1b.jpg')
-                                            a.object_img.objectMain(href='i/villa/villa_888-2b.jpg' data-fancybox="qw-villa_888" data-qw-form="qw-form-villa_888")
-                                                img(src='i/villa/villa_888-2b.jpg')
-                                            a.object_img.objectMain(href='i/villa/villa_888-3b.jpg' data-fancybox="qw-villa_888" data-qw-form="qw-form-villa_888")
-                                                img(src='i/villa/villa_888-3b.jpg')
+                                            - var vl_name = 'qw-villa_888';
+                                            +object_img('i/villa/villa_888-1b.jpg', vl_name, true, 'current')
+                                            +object_img('i/villa/villa_888-2b.jpg', vl_name, true)
+                                            +object_img('i/villa/villa_888-3b.jpg', vl_name, true)
+                                           
                                         .hide
-                                            a.object_img.objectMain(href='i/vl_888/dining_area_3.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/double_bedroom_3.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/double_bedroom_4.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/double_bedroom_5.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/double_bedroom_7.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/ensuite_bathroom_2.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/ensuite_bathroom.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/guest_toilet_2.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/lounge_2.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/main_bathroom_2.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/main_bathroom_4.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/main_bathroom_6.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/sea_views_pool_area.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/villa_n_2.jpg' data-fancybox="qw-villa_888")
-                                            a.object_img.objectMain(href='i/vl_888/villa_n.jpg' data-fancybox="qw-villa_888")
+                                            +object_img('i/vl_888/dining_area_3.jpg', vl_name)
+                                            +object_img('i/vl_888/double_bedroom_3.jpg', vl_name)
+                                            +object_img('i/vl_888/double_bedroom_4.jpg', vl_name)
+                                            +object_img('i/vl_888/double_bedroom_5.jpg', vl_name)
+                                            +object_img('i/vl_888/double_bedroom_7.jpg', vl_name)
+                                            +object_img('i/vl_888/ensuite_bathroom_2.jpg', vl_name)
+                                            +object_img('i/vl_888/ensuite_bathroom.jpg', vl_name)
+                                            +object_img('i/vl_888/guest_toilet_2.jpg', vl_name)
+                                            +object_img('i/vl_888/lounge_2.jpg', vl_name)
+                                            +object_img('i/vl_888/main_bathroom_2.jpg', vl_name)
+                                            +object_img('i/vl_888/main_bathroom_4.jpg', vl_name)
+                                            +object_img('i/vl_888/main_bathroom_6.jpg', vl_name)
+                                            +object_img('i/vl_888/sea_views_pool_area.jpg', vl_name)
+                                            +object_img('i/vl_888/villa_n_2.jpg', vl_name)
+                                            +object_img('i/vl_888/villa_n.jpg', vl_name)
                                            
                                         ul.object_gallery
                                             li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_888-1.jpg')
@@ -119,6 +118,46 @@ html(lang='ru')
                                             dd Ларнака (45 км)
                 
                                 .slide 
+                                    .object_unit
+                                        .object_img_loader
+                                            - var vl_name = 'qw-villa_872';
+                                            +object_img('i/villa/villa_872-1b.jpg', vl_name, true, 'current')
+                                            +object_img('i/villa/villa_872-2b.jpg', vl_name, true)
+                                            +object_img('i/villa/villa_872-3b.jpg', vl_name, true)
+                                            
+                                        .hide
+                                            
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_872-1.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_872-2.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_872-3.jpg')
+                                        
+                                        .object_caption Вилла VL 872
+                                            
+                                        .object_tip На пляже, 7 минут езды до центра Ларнаки, рядом рестораны, бары и другие развлечения
+                                        
+                                        +object_price() 
+                                            //-._daily от 1350 € в неделю
+                                            ._weekly от 800 € в неделю
+                            
+                                        .object_description: p Вилла расположена всего в нескольких шагах от моря рядом с минимаркетом, большим количество ресторанов и кафе. В 2х минутах ходьбы есть автобусная остановка Вы можете добраться 
+                                            .object_description_link: a.clr_green.requestBtn(href='#'): b Подробнее
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 3
+                                            
+                                            dt Ванных
+                                            dd 2
+                                            
+                                            dt Максимальное количество человек
+                                            dd 6
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                
+                                //- 872
+                                //-.slide 
                                     .object_unit
                                         .object_img_loader
                                             a.object_img.objectMain.current(href='i/villa/villa_872-1b.jpg' data-fancybox="qw-villa_872" data-qw-form="qw-form-villa_872")
@@ -161,45 +200,48 @@ html(lang='ru')
                                 .slide 
                                     .object_unit
                                         .object_img_loader
-                                            a.object_img.objectMain.current(href='i/villa/villa_868-1b.jpg' data-fancybox="qw-villa_868" data-qw-form="qw-form-villa_868")
-                                                img(src='i/villa/villa_868-1b.jpg')
-                                            a.object_img.objectMain(href='i/villa/villa_868-2b.jpg' data-fancybox="qw-villa_868" data-qw-form="qw-form-villa_868")
-                                                img(src='i/villa/villa_868-2b.jpg')
-                                            a.object_img.objectMain(href='i/villa/villa_868-3b.jpg' data-fancybox="qw-villa_868" data-qw-form="qw-form-villa_868")
-                                                img(src='i/villa/villa_868-3b.jpg')
+                                            - var vl_name = 'qw-villa_1235';
+                                            +object_img('i/vl_1235/villa_2b.jpg', vl_name, true, 'current')
+                                            +object_img('i/vl_1235/villab.jpg', vl_name, true)
+                                            +object_img('i/vl_1235/pool_areab.jpg', vl_name, true)
+                                            
                                         .hide
-                                            a.object_img.objectMain(href='i/vl_868/pool_and_garden.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/bathroom_downstairs.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/bedroom_2.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/dining_table.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/garden.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/kitchen_pic_2.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/kitchen.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/lounge.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/master_bedroom_pic_1.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/pool_2.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/pool_area.jpg' data-fancybox="qw-villa_868")
-                                            a.object_img.objectMain(href='i/vl_868/villa_and_pool_pic_2.jpg' data-fancybox="qw-villa_868")
+                                            +object_img('i/vl_1235/bathroom_en-suite_in_bedroom2b.jpg', vl_name)
+                                            +object_img('i/vl_1235/bathroom_en-suite_in_main_bedroomb.jpg', vl_name)
+                                            +object_img('i/vl_1235/bathroom_in_main_bedroomb.jpg', vl_name)
+                                            +object_img('i/vl_1235/dinning_areab.jpg', vl_name)
+                                            +object_img('i/vl_1235/kitchenb.jpg', vl_name)
+                                            +object_img('i/vl_1235/lounge_2b.jpg', vl_name)
+                                            +object_img('i/vl_1235/lounge_entranceb.jpg', vl_name)
+                                            +object_img('i/vl_1235/lounge3b.jpg', vl_name)
+                                            +object_img('i/vl_1235/loungeb.jpg', vl_name)
+                                            +object_img('i/vl_1235/main_bedroom_1b.jpg', vl_name)
+                                            +object_img('i/vl_1235/main_bedroomb.jpg', vl_name)
+                                            +object_img('i/vl_1235/poolb.jpg', vl_name)
+                                            +object_img('i/vl_1235/sitting_area_in_main_bedroomb.jpg', vl_name)
+                                            +object_img('i/vl_1235/tv_areab.jpg', vl_name)
+                                            +object_img('i/vl_1235/view_from_the_bedroomsb.jpg', vl_name)
+                                            +object_img('i/vl_1235/bedroom_3b.jpg', vl_name)
                                             
                                         ul.object_gallery
-                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_868-1.jpg')
-                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_868-2.jpg')
-                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_868-3.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/vl_1235/villa_2.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/vl_1235/villa.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/vl_1235/pool_area.jpg')
                                         
-                                        .object_caption Вилла VL 868
+                                        .object_caption Вилла VL 1235
                                             
-                                        .object_tip Пляж 200м, Турзона, Курорт, Рядом с ресторанами и барами, Рядом с магазинами
+                                        .object_tip Вилла находится на берегу моря, в спокойном тихом месте недалеко от деревни Перволия, и города Ларнака.
                                         
                                         +object_price() 
-                                            ._daily от 1350 € в неделю
-                                            ._weekly от 1100 € в неделю
+                                            ._daily от 2100 € в неделю
+                                            ._weekly от 1950 € в неделю
                             
-                                        .object_description: p Вилла расположена в районе Каппарис, в Протарасе – идеальном месте для семейного отдыха. Песчаный пляж с кристально чистой водой, а также рестораны бары и магазины находятся на расстоянии 
+                                        .object_description: p Просторная вилла с частным бассейном располагается прямо у пляжа. Дом имеет два этажа, он отлично оборудован и оснащен всем необходимым для комфортного отдыха. На первом этаже виллы – просторная  гостиная, открытого плана столовая и кухня. Здесь к Вашим услугам стиральная машина, посудомоечная машина, холодильник, микроволновая печь, вся посуда и столовые приборы. Имеется ТВ со спутниковой антенной, беспроводной интернет. 
                                             .object_description_link: a.clr_green.requestBtn(href='#'): b Подробнее
                                             
                                         dl.object_features
                                             dt Спален
-                                            dd 3
+                                            dd 4
                                             
                                             dt Ванных
                                             dd 3
@@ -208,30 +250,81 @@ html(lang='ru')
                                             dd 8
                                             
                                             dt Ближайший аэропорт
-                                            dd Ларнака (65 км)
+                                            dd Ларнака (15 минут)
 
+                                //- Adonis
+                                //-.slide 
+                                    .object_unit
+                                        .object_img_loader: a.object_img.objectMain(href='i/vl_694/bedroom_1.jpg' data-fancybox="qw-villa_adonis" data-qw-form="qw-form-villa_adonis")
+                                            img(src='i/villa/villa_adonis-1b.jpg')
+                                        .hide
+                                            a.object_img.objectMain(href='i/vl_694/bedroom_3.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/dinning.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/dinning2.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/downstairs_bedroom.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/en-suite_in_bedroom_3.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/en-suite_in_bedroom_4.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/garden_on_the_front.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/guest_toilet.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/lounge.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/pool_and_views.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/sea_view.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/teracce_2.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/terrace_3.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/terrace.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/veranda_and_fruits.jpg' data-fancybox="qw-villa_adonis")
+                                            a.object_img.objectMain(href='i/vl_694/bathroom_2.jpg' data-fancybox="qw-villa_adonis")
+
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_adonis-1.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_adonis-2.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/villa/villa_adonis-3.jpg')
+                                        
+                                        .object_caption Вилла Adonis
+                                            
+                                        .object_tip Рядом с пляжем. До центра Ларнаки 15 минут на машине.
+                                        
+                                        +object_price() 
+                                            //-._daily 23 - 44 € в день с человека
+                                            ._weekly от 1250 € в неделю
+                            
+                                        .object_description: p Идеально подходит для компании друзей или семьи, кто желает отдохнуть в тишине. Вилла полностью кондиционирована и оборудована всем необходимым для Вашего комфортного отдыха. 
+                                            .object_description_link: a.clr_green.requestBtn(href='#'): b Подробнее
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 4
+                                            
+                                            dt Ванных
+                                            dd 5
+                                            
+                                            dt Максимальное количество человек
+                                            dd 8
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                            
                                 .slide 
                                     .object_unit
                                         .object_img_loader
-                                            a.object_img.objectMain.current(href='i/vl_1234/vl1234_pict_1b.jpg' data-fancybox="qw-villa_adonis" data-qw-form="qw-form-villa_adonis")
-                                                img(src='i/vl_1234/vl1234_pict_1b.jpg')
-                                            a.object_img.objectMain(href='i/vl_1234/vl1234_pict_2b.jpg' data-fancybox="qw-villa_adonis" data-qw-form="qw-form-villa_adonis")
-                                                img(src='i/vl_1234/vl1234_pict_2b.jpg')
-                                            a.object_img.objectMain(href='i/vl_1234/vl1234_pict_6b.jpg' data-fancybox="qw-villa_adonis" data-qw-form="qw-form-villa_adonis")
-                                                img(src='i/vl_1234/vl1234_pict_6b.jpg')
+                                            - var vl_name = 'qw-villa_1233';
+                                            +object_img('i/vl_1234/vl1234_pict_1b.jpg', vl_name, true, 'current')
+                                            +object_img('i/vl_1234/vl1234_pict_2b.jpg', vl_name, true)
+                                            +object_img('i/vl_1234/vl1234_pict_6b.jpg', vl_name, true)
+                                            
                                         .hide
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_3b.jpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_4b.jpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_5b.jpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_7b.jpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_8b.jpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_9b.jpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_10b.gpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_11b.gpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_12b.gpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_13b.gpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_14b.gpg')
-                                            a.object_img.objectMain(data-fancybox="qw-villa_adonis" href='i/vl_1234/vl1234_pict_15b.gpg')
+                                            +object_img('i/vl_1234/vl1234_pict_3b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_4b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_5b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_7b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_8b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_9b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_10b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_11b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_12b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_13b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_14b.jpg', vl_name)
+                                            +object_img('i/vl_1234/vl1234_pict_15b.jpg', vl_name)
 
                                         ul.object_gallery
                                             li: a.object_img.objectThumb(href='#'): img(src='i/vl_1234/vl1234_pict_1.jpg')
@@ -245,7 +338,7 @@ html(lang='ru')
                                             ._daily от 3500 € в неделю
                                             ._weekly от 3200 € в неделю
                             
-                                        .object_description: p Интерьер виллы отлично организован с вниманием к каждой детали. На первом этаже просторная светлая гостиная, обеденная зона и отдельная кухня.
+                                        .object_description: p Интерьер виллы отлично организован с вниманием к каждой детали. На первом этаже просторная светлая гостиная, обеденная зона и отдельная кухня. В гостиной расположены две софы, журнальный столик, телевизор и DVD/CD проигрыватель. 
                                             .object_description_link: a.clr_green.requestBtn(href='#'): b Подробнее
                                             
                                         dl.object_features
@@ -260,16 +353,14 @@ html(lang='ru')
                                             
                                             dt Ближайший аэропорт
                                             dd Ларнака (45 км)
-                                            
+
                                 .slide 
                                     .object_unit
                                         .object_img_loader
-                                            a.object_img.objectMain.current(href='i/villa/villa_nefeli-1b.jpg' data-fancybox="qw-villa_nefeli" data-qw-form="qw-form-villa_nefeli")
-                                                img(src='i/villa/villa_nefeli-1b.jpg')
-                                            a.object_img.objectMain(href='i/villa/villa_nefeli-2b.jpg' data-fancybox="qw-villa_nefeli")
-                                                img(src='i/villa/villa_nefeli-2b.jpg')
-                                            a.object_img.objectMain(href='i/villa/villa_nefeli-3b.jpg' data-fancybox="qw-villa_nefeli")
-                                                img(src='i/villa/villa_nefeli-3b.jpg')
+                                            - var vl_name = 'qw-villa_nefeli';
+                                            +object_img('i/villa/villa_nefeli-1b.jpg', vl_name, true, 'current')
+                                            +object_img('i/villa/villa_nefeli-2b.jpg', vl_name, true)
+                                            +object_img('i/villa/villa_nefeli-3b.jpg', vl_name, true)
 
                                         .hide
                                             
@@ -303,6 +394,57 @@ html(lang='ru')
                                             dd Ларнака (15 км)
                                             
                                 .slide 
+                                    .object_unit
+                                        .object_img_loader
+                                            - var vl_name = 'qw-villa_807';
+                                            +object_img('i/vl_807/villab.jpg', vl_name, true, 'current')
+                                            +object_img('i/vl_807/bedroom_downsrairsb.jpg', vl_name, true)
+                                            +object_img('i/vl_807/swimming_poolb.jpg', vl_name, true)
+                                           
+                                        .hide
+                                            +object_img('i/vl_807/barbeque_areab.jpg', vl_name)
+                                            +object_img('i/vl_807/bathroom_downstairsb.jpg', vl_name)
+                                            +object_img('i/vl_807/bathroomb.jpg', vl_name)
+                                            +object_img('i/vl_807/bedroom_2_pic_2b.jpg', vl_name)
+                                            +object_img('i/vl_807/bedroom_2b.jpg', vl_name)
+                                            +object_img('i/vl_807/bedroom_3b.jpg', vl_name)
+                                            +object_img('i/vl_807/kitchen_pic_2b.jpg', vl_name)
+                                            +object_img('i/vl_807/kitchenb.jpg', vl_name)
+                                            +object_img('i/vl_807/loungeb.jpg', vl_name)
+                                            +object_img('i/vl_807/play_groundb.jpg', vl_name)
+                                            +object_img('i/vl_807/play_ground_2b.jpg', vl_name)
+                                            
+                                        ul.object_gallery
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/vl_807/villa.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/vl_807/bedroom_downsrairs.jpg')
+                                            li: a.object_img.objectThumb(href='#'): img(src='i/vl_807/swimming_pool.jpg')
+                                        
+                                        .object_caption Вилла VL 807
+                                            
+                                        .object_tip Рядом с пляжем. Центр турзоны, пешком до развлечений.
+                                        
+                                        +object_price() 
+                                            ._daily от 2200 € в неделю
+                                            ._weekly от 2000 € в неделю
+                            
+                                        .object_description: p Вилла в 50 метрах от моря на территории которой есть сад, барбекю с барной стойкой и садовая мебель, имеет все необходимое для незабываемого роскошного отдыха. <br>  Дом отлично оборудован. 
+                                            .object_description_link: a.clr_green.requestBtn(href='#'): b Подробнее
+                                            
+                                        dl.object_features
+                                            dt Спален
+                                            dd 3
+                                            
+                                            dt Ванных
+                                            dd 3
+                                            
+                                            dt Максимальное количество человек
+                                            dd 6
+                                            
+                                            dt Ближайший аэропорт
+                                            dd Ларнака (15 км)
+                                            
+                                //- Larnaca Bay 8
+                                //-.slide 
                                     .object_unit
                                         .object_img_loader: a.object_img.objectMain(href='i/villa/villa_larnaca-1b.jpg' data-fancybox="qw-villa_larnaca" data-qw-form="qw-form-villa_larnaca")
                                             img(src='i/villa/villa_larnaca-1b.jpg')
@@ -684,7 +826,7 @@ html(lang='ru')
                     .section.benefits
                         .section_inner
                             h2.section_title
-                                span.clr_green ПРЕИМУЩЕСТВА КОМПАНИИ CYPROGROUP
+                                span.clr_green ПРЕИМУЩЕСТВА КОМПАНИИ "CyproGroup" Ltd
                                 
                             ul.benefits_list
                                 li 
